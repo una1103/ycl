@@ -1,290 +1,170 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>詠粸麗 美甲工作室 心理測驗</title>
-<style>
-  body {
-    font-family: "微軟正黑體", sans-serif;
-    background-color: #fff0f6; /* 粉色背景 */
-    margin: 20px;
-    color: #333;
-  }
-  h1, h2 {
-    color: #d6336c;
-  }
-  .section {
-    margin-bottom: 40px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 3px 6px rgba(214, 51, 108, 0.15);
-  }
-  .options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-  .option {
-    cursor: pointer;
-    flex: 1 1 calc(20% - 12px);
-    max-width: 150px;
-    text-align: center;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    padding: 5px;
-    transition: border-color 0.3s;
-  }
-  .option img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  .option.selected {
-    border-color: #d6336c;
-    background-color: #ffe6f0;
-  }
-  .result {
-    margin-top: 15px;
-    padding: 15px;
-    border-top: 2px solid #d6336c;
-    color: #d6336c;
-    font-weight: bold;
-    min-height: 60px;
-  }
-  .goddess-desc {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #555;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>YCL 美甲心理測驗</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    h2 {
+      color: #d87093;
+      border-bottom: 2px solid #d87093;
+      padding-bottom: 5px;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .grid img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 3px solid transparent;
+    }
+    .grid img:hover {
+      border-color: #ff69b4;
+    }
+    .result {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px dashed #999;
+      background-color: #fff;
+    }
+    .button {
+      display: inline-block;
+      background-color: #ff69b4;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>詠粸麗 美甲工作室 心理測驗</h1>
+  <h1>✨ YCL 美甲心理測驗 ✨</h1>
 
-<!-- 測驗一 -->
-<div class="section" id="test1">
-  <h2>測驗一：你的靈魂色彩是什麼？【星座＋直覺題】</h2>
-  <p><b>Step 1.</b> 選擇你的太陽星座：</p>
-  <div class="options" id="zodiac-options">
-    <div class="option" data-value="fire" title="火象星座 ♈牡羊 ♌獅子 ♐射手">
-      <img src="images/zodiac_aries.jpg" alt="牡羊座" />
-      <div>牡羊座</div>
-      <!-- 此處可擴充12星座，可視為火象代表，這裡示意只用牡羊 -->
-    </div>
-    <div class="option" data-value="earth" title="土象星座 ♉金牛 ♍處女 ♑魔羯">
-      <img src="images/zodiac_taurus.jpg" alt="金牛座" />
-      <div>金牛座</div>
-    </div>
-    <div class="option" data-value="air" title="風象星座 ♊雙子 ♎天秤 ♒水瓶">
-      <img src="images/zodiac_gemini.jpg" alt="雙子座" />
-      <div>雙子座</div>
-    </div>
-    <div class="option" data-value="water" title="水象星座 ♋巨蟹 ♏天蠍 ♓雙魚">
-      <img src="images/zodiac_cancer.jpg" alt="巨蟹座" />
-      <div>巨蟹座</div>
-    </div>
+  <!-- 測驗一：靈魂色彩（12星座分類 + 直覺牌卡） -->
+  <h2>🌈 測驗一：你的靈魂色彩？</h2>
+
+  <p>Step 1. 選擇你的星座：</p>
+  <div class="grid" id="zodiac">
+    <!-- 火象 -->
+    <img src="images/aries.jpg" alt="牡羊" data-element="火象"> <!-- 牡羊 -->
+    <img src="images/leo.jpg" alt="獅子" data-element="火象"> <!-- 獅子 -->
+    <img src="images/sagittarius.jpg" alt="射手" data-element="火象"> <!-- 射手 -->
+    <!-- 土象 -->
+    <img src="images/taurus.jpg" alt="金牛" data-element="土象"> <!-- 金牛 -->
+    <img src="images/virgo.jpg" alt="處女" data-element="土象"> <!-- 處女 -->
+    <img src="images/capricorn.jpg" alt="魔羯" data-element="土象"> <!-- 魔羯 -->
+    <!-- 風象 -->
+    <img src="images/gemini.jpg" alt="雙子" data-element="風象"> <!-- 雙子 -->
+    <img src="images/libra.jpg" alt="天秤" data-element="風象"> <!-- 天秤 -->
+    <img src="images/aquarius.jpg" alt="水瓶" data-element="風象"> <!-- 水瓶 -->
+    <!-- 水象 -->
+    <img src="images/cancer.jpg" alt="巨蟹" data-element="水象"> <!-- 巨蟹 -->
+    <img src="images/scorpio.jpg" alt="天蠍" data-element="水象"> <!-- 天蠍 -->
+    <img src="images/pisces.jpg" alt="雙魚" data-element="水象"> <!-- 雙魚 -->
   </div>
 
-  <p><b>Step 2.</b> 閉上眼，直覺選一張神秘牌卡：</p>
-  <div class="options" id="mystery-options">
-    <div class="option" data-value="A" title="一道森林的月光">
-      <img src="images/mystery_A.jpg" alt="森林月光" />
-      <div>森林月光</div>
-    </div>
-    <div class="option" data-value="B" title="深海裡的光點">
-      <img src="images/mystery_B.jpg" alt="深海光點" />
-      <div>深海光點</div>
-    </div>
-    <div class="option" data-value="C" title="漂浮的彩色氣泡">
-      <img src="images/mystery_C.jpg" alt="彩色氣泡" />
-      <div>彩色氣泡</div>
-    </div>
-    <div class="option" data-value="D" title="紫水晶寶石">
-      <img src="images/mystery_D.jpg" alt="紫水晶寶石" />
-      <div>紫水晶寶石</div>
-    </div>
+  <p>Step 2. 憑直覺選一張牌卡：</p>
+  <div class="grid" id="card">
+    <img src="images/moonlight.jpg" alt="森林月光" data-card="A"> <!-- A 森林月光 -->
+    <img src="images/deepsea.jpg" alt="深海光點" data-card="B"> <!-- B 深海光點 -->
+    <img src="images/bubbles.jpg" alt="彩色氣泡" data-card="C"> <!-- C 彩色氣泡 -->
+    <img src="images/amethyst.jpg" alt="紫水晶" data-card="D"> <!-- D 紫水晶 -->
   </div>
 
   <div class="result" id="result1"></div>
-</div>
 
-<!-- 測驗二 -->
-<div class="section" id="test2">
-  <h2>測驗二：潛意識測色測驗</h2>
-  <p>請看以下四張圖，選擇最吸引你的：</p>
-  <div class="options" id="subconscious-options">
-    <div class="option" data-value="1" title="火焰裡閃爍的金屬">
-      <img src="images/subconscious_1.jpg" alt="火焰金屬" />
-      <div>火焰金屬</div>
-    </div>
-    <div class="option" data-value="2" title="雨後濕潤的森林">
-      <img src="images/subconscious_2.jpg" alt="雨後森林" />
-      <div>雨後森林</div>
-    </div>
-    <div class="option" data-value="3" title="冰雪中的玻璃球">
-      <img src="images/subconscious_3.jpg" alt="冰雪玻璃球" />
-      <div>冰雪玻璃球</div>
-    </div>
-    <div class="option" data-value="4" title="月亮照著湖水的倒影">
-      <img src="images/subconscious_4.jpg" alt="月亮湖水倒影" />
-      <div>月亮湖水倒影</div>
-    </div>
+  <!-- 測驗二：潛意識選圖 -->
+  <h2>🔮 測驗二：潛意識選圖測色</h2>
+  <p>哪一張圖片最吸引你？</p>
+  <div class="grid" id="subconscious">
+    <img src="images/firemetal.jpg" alt="火焰金屬" data-style="華麗風"> <!-- 火焰金屬 -->
+    <img src="images/forest.jpg" alt="森林濕潤" data-style="文青風"> <!-- 森林 -->
+    <img src="images/glassball.jpg" alt="冰雪玻璃球" data-style="氣質風"> <!-- 冰雪 -->
+    <img src="images/moonlake.jpg" alt="月湖倒影" data-style="靈性風"> <!-- 月湖 -->
   </div>
   <div class="result" id="result2"></div>
-</div>
 
-<!-- 測驗三 -->
-<div class="section" id="test3">
-  <h2>測驗三：你的守護星座女神是誰？</h2>
-  <p>請選擇你最近最常出現的情緒：</p>
-  <div class="options" id="goddess-options">
-    <div class="option" data-value="A" title="天蠍座（黑月赫卡忒）">
-      <img src="images/goddess_scorpio.jpg" alt="天蠍女神 黑月赫卡忒" />
-      <div>天蠍女神<br>黑月赫卡忒</div>
-      <div class="goddess-desc">魔幻渲染、水晶銀箔，黑紫、金屬亮片風格</div>
-    </div>
-    <div class="option" data-value="B" title="雙魚座（夢境女神）">
-      <img src="images/goddess_pisces.jpg" alt="雙魚女神 夢境女神" />
-      <div>雙魚女神<br>夢境女神</div>
-      <div class="goddess-desc">貝殼光、乳白琉璃，淡粉、乳白、光澤漸層風格</div>
-    </div>
-    <div class="option" data-value="C" title="獅子座（太陽女王）">
-      <img src="images/goddess_leo.jpg" alt="獅子女神 太陽女王" />
-      <div>獅子女神<br>太陽女王</div>
-      <div class="goddess-desc">金箔設計、亮彩跳色，金、桃紅、寶石藍風格</div>
-    </div>
-    <div class="option" data-value="D" title="處女座（自然女神）">
-      <img src="images/goddess_virgo.jpg" alt="處女女神 自然女神" />
-      <div>處女女神<br>自然女神</div>
-      <div class="goddess-desc">極簡線條、小花乾燥，奶茶、霧感裸色風格</div>
-    </div>
+  <!-- 測驗三：情緒對應星座女神 -->
+  <h2>🌙 測驗三：你的守護星座女神？</h2>
+  <p>你最近最常出現的情緒是？</p>
+  <div class="grid" id="emotion">
+    <img src="images/option-a.jpg" alt="A：想要改變" data-goddess="赫卡忒"> <!-- 黑月赫卡忒 -->
+    <img src="images/option-b.jpg" alt="B：需要安慰" data-goddess="夢境女神"> <!-- 雙魚夢女 -->
+    <img src="images/option-c.jpg" alt="C：想亮眼" data-goddess="太陽女王"> <!-- 獅子女王 -->
+    <img src="images/option-d.jpg" alt="D：想放鬆" data-goddess="自然女神"> <!-- 處女女神 -->
   </div>
   <div class="result" id="result3"></div>
-</div>
 
-<script>
-  // 變數儲存答案
-  let test1Answer = null;
-  let test2Answer = null;
-  let test3Answer = null;
+  <script>
+    let selectedElement = "";
 
-  // 測驗一
-  const zodiacOptions = document.querySelectorAll("#zodiac-options .option");
-  const mysteryOptions = document.querySelectorAll("#mystery-options .option");
-  const result1 = document.getElementById("result1");
-
-  zodiacOptions.forEach(option => {
-    option.addEventListener("click", () => {
-      zodiacOptions.forEach(o => o.classList.remove("selected"));
-      option.classList.add("selected");
-      test1Answer = option.getAttribute("data-value");
-      updateTest1Result();
+    document.querySelectorAll('#zodiac img').forEach(img => {
+      img.onclick = () => {
+        selectedElement = img.dataset.element;
+        document.querySelectorAll('#zodiac img').forEach(i => i.style.borderColor = "transparent");
+        img.style.borderColor = "#ff69b4";
+      };
     });
-  });
 
-  mysteryOptions.forEach(option => {
-    option.addEventListener("click", () => {
-      mysteryOptions.forEach(o => o.classList.remove("selected"));
-      option.classList.add("selected");
-      test1AnswerMystery = option.getAttribute("data-value");
-      updateTest1Result();
+    document.querySelectorAll('#card img').forEach(img => {
+      img.onclick = () => {
+        if (!selectedElement) {
+          alert("請先選擇星座");
+          return;
+        }
+        const card = img.dataset.card;
+        const key = selectedElement + "-" + card;
+        const resultMap = {
+          "火象-A": "神秘霧灰紫", "火象-B": "深邃藏藍", "火象-C": "電光桃粉", "火象-D": "閃亮橘金",
+          "土象-A": "苔綠裸色", "土象-B": "湖水灰綠", "土象-C": "奶茶橘粉", "土象-D": "星鑽銀白",
+          "風象-A": "太空金屬紫", "風象-B": "霧感藍灰", "風象-C": "糖果撞色", "風象-D": "星座銀河",
+          "水象-A": "冰透藍紫", "水象-B": "黑金渲染", "水象-C": "貝殼珠光", "水象-D": "紫晶琉璃"
+        };
+        document.getElementById('result1').innerText = "推薦風格色彩：" + (resultMap[key] || "請重新選擇");
+      };
     });
-  });
 
-  function updateTest1Result(){
-    if(!test1Answer || !test1AnswerMystery) {
-      result1.textContent = "請完成星座與神秘牌的選擇";
-      return;
-    }
-    // 對應結果表，依火土風水及A-D給出建議
-    const styleMap = {
-      fire: {
-        A: "神秘霧灰紫",
-        B: "深邃藏藍色",
-        C: "電光桃粉",
-        D: "閃亮橘金"
-      },
-      earth: {
-        A: "苔綠與裸色",
-        B: "湖水灰綠",
-        C: "奶茶橘粉",
-        D: "星鑽銀白"
-      },
-      air: {
-        A: "太空金屬紫",
-        B: "霧感藍灰",
-        C: "糖果撞色",
-        D: "星座銀河"
-      },
-      water: {
-        A: "冰透藍紫",
-        B: "黑金渲染",
-        C: "貝殼珠光",
-        D: "紫晶琉璃"
-      }
-    };
-    const style = styleMap[test1Answer][test1AnswerMystery];
-    result1.textContent = `你的靈魂色彩建議是：${style}，非常適合今日的美甲造型！`;
-  }
-
-  // 測驗二
-  const subconsciousOptions = document.querySelectorAll("#subconscious-options .option");
-  const result2 = document.getElementById("result2");
-
-  subconsciousOptions.forEach(option => {
-    option.addEventListener("click", () => {
-      subconsciousOptions.forEach(o => o.classList.remove("selected"));
-      option.classList.add("selected");
-      test2Answer = option.getAttribute("data-value");
-      updateTest2Result();
+    document.querySelectorAll('#subconscious img').forEach(img => {
+      img.onclick = () => {
+        const style = img.dataset.style;
+        const msg = {
+          "華麗風": "金屬亮片、紅棕色或電鍍感設計，適合氣勢女王",
+          "文青風": "霧感橘、墨綠、乾燥花配色，清新自然",
+          "氣質風": "銀白、冰晶、裸感透亮，適合氣質系女孩",
+          "靈性風": "紫灰色調、星空漸層，療癒內在能量"
+        };
+        document.getElementById('result2').innerText = msg[style];
+      };
     });
-  });
 
-  function updateTest2Result(){
-    if(!test2Answer) {
-      result2.textContent = "請選擇一個圖像";
-      return;
-    }
-    const resultMap = {
-      "1": "氣勢女王、華麗風（金屬亮片、紅棕、電鍍）",
-      "2": "文青森林系、乾燥花風（墨綠、土色、霧感橘）",
-      "3": "冰晶裸感、氣質風（銀白、透明感、藍系）",
-      "4": "靈性系、星空漸層風（紫灰、深藍、光影）"
-    };
-    result2.textContent = `你的潛意識顏色偏好是：${resultMap[test2Answer]}。`;
-  }
-
-  // 測驗三
-  const goddessOptions = document.querySelectorAll("#goddess-options .option");
-  const result3 = document.getElementById("result3");
-
-  goddessOptions.forEach(option => {
-    option.addEventListener("click", () => {
-      goddessOptions.forEach(o => o.classList.remove("selected"));
-      option.classList.add("selected");
-      test3Answer = option.getAttribute("data-value");
-      updateTest3Result();
+    document.querySelectorAll('#emotion img').forEach(img => {
+      img.onclick = () => {
+        const goddess = img.dataset.goddess;
+        const text = {
+          "赫卡忒": "黑月女神赫卡忒：推薦魔幻黑紫、水晶銀箔風格",
+          "夢境女神": "雙魚夢境女神：推薦乳白貝殼光、漸層光澤設計",
+          "太陽女王": "獅子女王：推薦金箔、跳色、寶石感設計",
+          "自然女神": "處女座自然女神：推薦小花、極簡風、霧感裸色"
+        };
+        document.getElementById('result3').innerText = text[goddess];
+      };
     });
-  });
-
-  function updateTest3Result(){
-    if(!test3Answer) {
-      result3.textContent = "請選擇你的情緒";
-      return;
-    }
-    const resultMap = {
-      "A": "天蠍座（黑月赫卡忒）- 魔幻渲染、水晶銀箔，黑紫、金屬亮片風格",
-      "B": "雙魚座（夢境女神）- 貝殼光、乳白琉璃，淡粉、乳白、光澤漸層風格",
-      "C": "獅子座（太陽女王）- 金箔設計、亮彩跳色，金、桃紅、寶石藍風格",
-      "D": "處女座（自然女神）- 極簡線條、小花乾燥，奶茶、霧感裸色風格"
-    };
-    result3.textContent = `你的守護星座女神是：${resultMap[test3Answer]}。`;
-  }
-</script>
+  </script>
 
 </body>
 </html>
