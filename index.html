@@ -1,111 +1,118 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>YCL 美甲心理測驗</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #ffeef4;
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #fff0f5;
       color: #333;
+      text-align: center;
       padding: 20px;
-      line-height: 1.8;
     }
-    h1, h2 {
+    h1 {
       color: #d63384;
     }
-    .test-section {
-      margin-bottom: 50px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    .question {
+      margin-bottom: 40px;
     }
-    img {
-      max-width: 100%;
+    .options img {
+      width: 180px;
+      margin: 10px;
+      cursor: pointer;
+      border: 3px solid transparent;
       border-radius: 8px;
-      margin: 10px 0;
     }
-    .card-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .options img:hover {
+      border-color: #d63384;
     }
-    .card-grid img {
-      width: 48%;
-    }
-    .goddess {
-      margin-top: 20px;
-    }
-    .goddess img {
-      width: 100%;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #777;
+    .result {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
     }
   </style>
 </head>
 <body>
-  <h1>✨ YCL Nail Studio：心理測驗小遊戲 ✨</h1>
 
-  <!-- 測驗一 -->
-  <div class="test-section">
-    <h2>🌈 測驗一：你的靈魂色彩是什麼？</h2>
-    <p>Step 1：選擇你的太陽星座：</p>
-    <ul>
-      <li>♈ 牡羊／♌ 獅子／♐ 射手 → 火象</li>
-      <li>♉ 金牛／♍ 處女／♑ 魔羯 → 土象</li>
-      <li>♊ 雙子／♎ 天秤／♒ 水瓶 → 風象</li>
-      <li>♋ 巨蟹／♏ 天蠍／♓ 雙魚 → 水象</li>
-    </ul>
-    <p>Step 2：直覺選一張神秘牌卡：</p>
-    <div class="card-grid">
-      <img src="images/card-a.jpg" alt="森林的月光">
-      <img src="images/card-b.jpg" alt="深海裡的光點">
-      <img src="images/card-c.jpg" alt="彩色氣泡">
-      <img src="images/card-d.jpg" alt="紫水晶寶石">
+  <h1>✨ 找出你的靈魂美甲風格 ✨</h1>
+
+  <div class="question">
+    <h2>Step 1：請選擇你的星座屬性</h2>
+    <select id="element">
+      <option value="">請選擇</option>
+      <option value="火象">♈ 牡羊 / ♌ 獅子 / ♐ 射手 → 火象</option>
+      <option value="土象">♉ 金牛 / ♍ 處女 / ♑ 魔羯 → 土象</option>
+      <option value="風象">♊ 雙子 / ♎ 天秤 / ♒ 水瓶 → 風象</option>
+      <option value="水象">♋ 巨蟹 / ♏ 天蠍 / ♓ 雙魚 → 水象</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <h2>Step 2：請憑直覺選擇一張神秘牌卡</h2>
+    <div class="options">
+      <!-- A：森林月光 -->
+      <img src="images/card-a.jpg" alt="森林月光" onclick="showResult('A')">
+      <!-- B：深海光點 -->
+      <img src="images/card-b.jpg" alt="深海光點" onclick="showResult('B')">
+      <!-- C：彩色氣泡 -->
+      <img src="images/card-c.jpg" alt="彩色氣泡" onclick="showResult('C')">
+      <!-- D：紫水晶 -->
+      <img src="images/card-d.jpg" alt="紫水晶" onclick="showResult('D')">
     </div>
-    <p>✨ 根據你的選擇，我們會推薦符合你風格的顏色組合！</p>
   </div>
 
-  <!-- 測驗二 -->
-  <div class="test-section">
-    <h2>🔮 測驗二：潛意識選色測驗</h2>
-    <p>請看下方四張圖，哪一張最吸引你？</p>
-    <div class="card-grid">
-      <img src="images/fire-metal.jpg" alt="火焰金屬">
-      <img src="images/forest.jpg" alt="雨後森林">
-      <img src="images/ice.jpg" alt="冰雪玻璃">
-      <img src="images/moon.jpg" alt="月亮倒影">
-    </div>
-    <p>👉 我們會推薦你偏好的造型與色系！</p>
+  <div class="result" id="resultBox">
+    <h2>你的靈魂美甲色是：</h2>
+    <p id="resultText"></p>
   </div>
 
-  <!-- 測驗三 -->
-  <div class="test-section">
-    <h2>🌙 測驗三：你的守護星座女神是誰？</h2>
-    <p>請選出你最近的情緒：</p>
-    <ul>
-      <li>A. 想改變 → 黑月赫卡忒（神秘黑紫）</li>
-      <li>B. 心煩疲憊 → 雙魚夢境女神（乳白粉光）</li>
-      <li>C. 很開心 → 獅子女王（桃紅寶石）</li>
-      <li>D. 平靜穩定 → 處女自然女神（奶茶裸色）</li>
-    </ul>
-    <div class="goddess">
-      <img src="images/goddess-a.jpg" alt="黑月赫卡忒">
-      <img src="images/goddess-b.jpg" alt="夢境女神">
-      <img src="images/goddess-c.jpg" alt="太陽女王">
-      <img src="images/goddess-d.jpg" alt="自然女神">
-    </div>
-    <p>✨ 根據你的情緒，找出適合的守護女神造型風格！</p>
-  </div>
+  <script>
+    function showResult(choice) {
+      const element = document.getElementById("element").value;
+      const resultText = document.getElementById("resultText");
+      const resultBox = document.getElementById("resultBox");
 
-  <div class="footer">
-    © 2025 YCL Nail Studio | 詠粸麗 美甲工作室
-  </div>
+      if (!element) {
+        alert("請先選擇你的星座屬性！");
+        return;
+      }
+
+      const results = {
+        "火象": {
+          "A": "神秘霧灰紫",
+          "B": "深邃藏藍色",
+          "C": "電光桃粉",
+          "D": "閃亮橘金"
+        },
+        "土象": {
+          "A": "苔綠與裸色",
+          "B": "湖水灰綠",
+          "C": "奶茶橘粉",
+          "D": "星鑽銀白"
+        },
+        "風象": {
+          "A": "太空金屬紫",
+          "B": "霧感藍灰",
+          "C": "糖果撞色",
+          "D": "星座銀河"
+        },
+        "水象": {
+          "A": "冰透藍紫",
+          "B": "黑金渲染",
+          "C": "貝殼珠光",
+          "D": "紫晶琉璃"
+        }
+      };
+
+      resultText.innerText = `【${results[element][choice]}】風格，快到店裡體驗你的命定色彩吧！`;
+      resultBox.style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
