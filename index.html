@@ -1,125 +1,120 @@
 <!DOCTYPE html>
-<html lang='zh-TW'>
+<html lang="zh-Hant">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>YCL Nail Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>靈魂色彩心理測驗 | YCL Nail Studio</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #fdfaf6;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #bfa76f;
+      text-align: center;
+    }
+    .section {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      background-color: #bfa76f;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a8905c;
+    }
+    .result {
+      background-color: #fff9ec;
+      padding: 15px;
+      border-left: 5px solid #bfa76f;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+  <h1>✨ 你的靈魂色彩是什麼？</h1>
+  <div class="section">
+    <h2>Step 1：請選擇你的星座屬性</h2>
+    <label><input type="radio" name="zodiac" value="火象"> 火象（牡羊／獅子／射手）</label>
+    <label><input type="radio" name="zodiac" value="土象"> 土象（金牛／處女／魔羯）</label>
+    <label><input type="radio" name="zodiac" value="風象"> 風象（雙子／天秤／水瓶）</label>
+    <label><input type="radio" name="zodiac" value="水象"> 水象（巨蟹／天蠍／雙魚）</label>
 
-<style>
-  .ycl-wrap {
-    font-family: 'Noto Sans TC', sans-serif;
-    background: #fffdfa;
-    color: #4a4a4a;
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-  }
-  .hero {
-    background: #fdf8f2;
-    border-radius: 12px;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  }
-  .hero h1 {
-    color: #bfa16a;
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  .hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  .hero a {
-    display: inline-block;
-    margin: 6px;
-    padding: 12px 24px;
-    background: #d4b07c;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .section {
-    margin: 40px 0;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  .section h2 {
-    color: #bfa16a;
-    border-bottom: 2px solid #f0e4d0;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  .services ul {
-    list-style: none;
-    padding: 0;
-  }
-  .services li {
-    font-size: 18px;
-    margin: 12px 0;
-  }
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-  .gallery img {
-    width: calc(33% - 8px);
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  .contact p {
-    font-size: 16px;
-    margin: 8px 0;
-  }
-  .contact a {
-    color: #bfa16a;
-    text-decoration: none;
-  }
-</style>
+    <h2>Step 2：請憑直覺選一張神秘牌卡</h2>
+    <label><input type="radio" name="intuition" value="A"> A. 一道森林的月光</label>
+    <label><input type="radio" name="intuition" value="B"> B. 深海裡的光點</label>
+    <label><input type="radio" name="intuition" value="C"> C. 漂浮的彩色氣泡</label>
+    <label><input type="radio" name="intuition" value="D"> D. 紫水晶寶石</label>
 
-<div class="ycl-wrap">
-  <div class="hero">
-    <h1>詠粸麗 美甲工作室</h1>
-    <p>YCL Nail Studio — 高雅細緻的指尖藝術</p>
-    <a href="https://lin.ee/166kslla" target="_blank">LINE 預約</a>
-    <a href="https://instagram.com/ycl_nail.studio" target="_blank">Instagram</a>
-    <a href="tel:0922828611">電話聯繫</a>
-  </div>
-  <div class="section services">
-    <h2>服務介紹</h2>
-    <ul>
-      <li>單色凝膠 ｜ NT$899 起</li>
-      <li>造型凝膠（含延甲）｜ NT$1599 起</li>
-      <li>卸甲／保養 ｜ NT$499 起</li>
-    </ul>
-  </div>
-  <div class="section gallery">
-    <h2>作品集</h2>
-    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=400&q=80" alt="Nail Sample 1">
-    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Nail Sample 2">
-    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Nail Sample 3">
-  </div>
-  <div class="section contact">
-    <h2>聯絡我們</h2>
-    <p>📍 地址：台中市北區精武路266-7號</p>
-    <p>📱 電話：<a href="tel:0922828611">0922-828-611</a></p>
-    <p>🕒 營業時間：每日 10:00～20:00</p>
-    <p>💬 LINE：<a href="https://lin.ee/166kslla" target="_blank">@166kslla</a></p>
-    <p>📸 Instagram：<a href="https://instagram.com/ycl_nail.studio" target="_blank">@ycl_nail.studio</a></p>
-    <div style="margin-top:20px;">
-      <iframe src="https://www.google.com/maps?q=台中市北區精武路266-7號&output=embed" width="100%" height="250" style="border:0;" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
+    <button onclick="showResult()">看結果</button>
 
+    <div id="result" class="result" style="display:none;"></div>
+  </div>
+
+  <script>
+    const colorMap = {
+      '火象': {
+        'A': '神秘霧灰紫',
+        'B': '深邃藏藍色',
+        'C': '電光桃粉',
+        'D': '閃亮橘金'
+      },
+      '土象': {
+        'A': '苔綠與裸色',
+        'B': '湖水灰綠',
+        'C': '奶茶橘粉',
+        'D': '星鑽銀白'
+      },
+      '風象': {
+        'A': '太空金屬紫',
+        'B': '霧感藍灰',
+        'C': '糖果撞色',
+        'D': '星座銀河'
+      },
+      '水象': {
+        'A': '冰透藍紫',
+        'B': '黑金渲染',
+        'C': '貝殼珠光',
+        'D': '紫晶琉璃'
+      }
+    };
+
+    function showResult() {
+      const zodiac = document.querySelector('input[name="zodiac"]:checked');
+      const intuition = document.querySelector('input[name="intuition"]:checked');
+      const resultBox = document.getElementById('result');
+
+      if (!zodiac || !intuition) {
+        resultBox.innerHTML = "請先選擇星座與直覺卡片喔！";
+        resultBox.style.display = "block";
+        return;
+      }
+
+      const color = colorMap[zodiac.value][intuition.value];
+      resultBox.innerHTML = `🌈 你的靈魂色彩是：<strong>${color}</strong>！<br><br>這個色彩代表著你當下的能量，適合做成指尖設計，展現你今天的氣場～快預約來體驗吧！`;
+      resultBox.style.display = "block";
+    }
+  </script>
 </body>
 </html>
