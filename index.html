@@ -1,355 +1,249 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head><!DOCTYPE html>
-<html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>YCL Nail Studio 心理測驗</title>
-<style>
-  body {
-    background: #f9f6f2; /* 官網白米色背景 */
-    font-family: 'Noto Sans TC', sans-serif;
-    margin: 0; padding: 20px;
-    color: #6b4c3b;
-  }
-  h1, h2 {
-    color: #b56b3c; /* 柔和金色 */
-    text-align: center;
-  }
-  .container {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgb(181 107 60 / 0.3);
-  }
-  .quiz {
-    margin-bottom: 40px;
-  }
-  .quiz h2 {
-    margin-bottom: 10px;
-  }
-  .question {
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  label {
-    display: block;
-    margin: 8px 0;
-    cursor: pointer;
-  }
-  button {
-    background-color: #b56b3c;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #a05d30;
-  }
-  .result {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f4e4d0;
-    border-radius: 8px;
-    border: 1px solid #b56b3c;
-    white-space: pre-line;
-  }
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #a98a72;
-  }
-</style>
-</head>
-<body>
-
-<div class="container">
-  <h1>YCL Nail Studio 心理測驗</h1>
-
-  <!-- 測驗一 -->
-  <div class="quiz" id="quiz1">
-    <h2>✨ 測驗一：你的靈魂色彩是什麼？【星座＋直覺題】</h2>
-    <div class="question">Step 1. 選擇你的太陽星座：</div>
-    <select id="q1-zodiac">
-      <option value="">請選擇星座</option>
-      <option value="fire">♈ 牡羊 / ♌ 獅子 / ♐ 射手 (火象星座)</option>
-      <option value="earth">♉ 金牛 / ♍ 處女 / ♑ 魔羯 (土象星座)</option>
-      <option value="air">♊ 雙子 / ♎ 天秤 / ♒ 水瓶 (風象星座)</option>
-      <option value="water">♋ 巨蟹 / ♏ 天蠍 / ♓ 雙魚 (水象星座)</option>
-    </select>
-
-    <div class="question" style="margin-top:15px;">Step 2. 閉上眼，直覺選一張神秘牌卡：</div>
-    <label><input type="radio" name="q1-card" value="A" /> A. 一道森林的月光</label>
-    <label><input type="radio" name="q1-card" value="B" /> B. 深海裡的光點</label>
-    <label><input type="radio" name="q1-card" value="C" /> C. 漂浮的彩色氣泡</label>
-    <label><input type="radio" name="q1-card" value="D" /> D. 紫水晶寶石</label>
-
-    <button onclick="calcQuiz1()">看結果</button>
-    <div id="result1" class="result" style="display:none;"></div>
-  </div>
-
-  <!-- 測驗二 -->
-  <div class="quiz" id="quiz2">
-    <h2>🔮 測驗二：潛意識測色測驗</h2>
-    <div class="question">請看以下四張圖，哪一張最吸引你？（請選擇編號）</div>
-    <label><input type="radio" name="q2" value="fire" /> 1. 火焰裡閃爍的金屬</label>
-    <label><input type="radio" name="q2" value="forest" /> 2. 雨後濕潤的森林</label>
-    <label><input type="radio" name="q2" value="ice" /> 3. 冰雪中的玻璃球</label>
-    <label><input type="radio" name="q2" value="moon" /> 4. 月亮照著湖水的倒影</label>
-
-    <button onclick="calcQuiz2()">看結果</button>
-    <div id="result2" class="result" style="display:none;"></div>
-  </div>
-
-  <!-- 測驗三 -->
-  <div class="quiz" id="quiz3">
-    <h2>🌙 測驗三：你的守護星座女神是誰？</h2>
-    <div class="question">你最近最常出現的情緒是？</div>
-    <label><input type="radio" name="q3" value="A" /> A. 想要重生，來點改變</label>
-    <label><input type="radio" name="q3" value="B" /> B. 心煩累累，需要安慰</label>
-    <label><input type="radio" name="q3" value="C" /> C. 很開心，想亮眼出場</label>
-    <label><input type="radio" name="q3" value="D" /> D. 心境穩定，想簡單放鬆</label>
-
-    <button onclick="calcQuiz3()">看結果</button>
-    <div id="result3" class="result" style="display:none;"></div>
-  </div>
-</div>
-
-<div class="footer">
-  © 2025 YCL Nail Studio
-</div>
-
-<script>
-function calcQuiz1() {
-  const zodiac = document.getElementById('q1-zodiac').value;
-  const cards = document.querySelector('input[name="q1-card"]:checked');
-  if (!zodiac || !cards) {
-    alert('請完成星座和牌卡的選擇');
-    return;
-  }
-  const card = cards.value;
-
-  const table = {
-    fire: {
-      A: "神秘霧灰紫",
-      B: "深邃藏藍色",
-      C: "電光桃粉",
-      D: "閃亮橘金"
-    },
-    earth: {
-      A: "苔綠與裸色",
-      B: "湖水灰綠",
-      C: "奶茶橘粉",
-      D: "星鑽銀白"
-    },
-    air: {
-      A: "太空金屬紫",
-      B: "霧感藍灰",
-      C: "糖果撞色",
-      D: "星座銀河"
-    },
-    water: {
-      A: "冰透藍紫",
-      B: "黑金渲染",
-      C: "貝殼珠光",
-      D: "紫晶琉璃"
-    }
-  };
-
-  const colors = table[zodiac][card];
-  const zodiacName = {
-    fire: "火象星座",
-    earth: "土象星座",
-    air: "風象星座",
-    water: "水象星座"
-  };
-
-  document.getElementById('result1').style.display = 'block';
-  document.getElementById('result1').textContent = 
-    `你的星座屬性是 ${zodiacName[zodiac]}，選擇了牌卡 ${card}，推薦美甲色彩是：${colors}。`;
-}
-
-function calcQuiz2() {
-  const choice = document.querySelector('input[name="q2"]:checked');
-  if (!choice) {
-    alert('請選擇一張圖片');
-    return;
-  }
-  const val = choice.value;
-  let resultText = '';
-
-  switch(val) {
-    case 'fire':
-      resultText = `你偏好金屬亮片、紅棕、電鍍色，適合氣勢女王、華麗風格。`;
-      break;
-    case 'forest':
-      resultText = `你偏好墨綠、土色、霧感橘，適合文青森林系、乾燥花風格。`;
-      break;
-    case 'ice':
-      resultText = `你偏好銀白、透明感、藍系，適合冰晶裸感、氣質風格。`;
-      break;
-    case 'moon':
-      resultText = `你偏好紫灰、深藍、光影，適合靈性系、星空漸層風格。`;
-      break;
-  }
-
-  document.getElementById('result2').style.display = 'block';
-  document.getElementById('result2').textContent = resultText;
-}
-
-function calcQuiz3() {
-  const choice = document.querySelector('input[name="q3"]:checked');
-  if (!choice) {
-    alert('請選擇情緒');
-    return;
-  }
-  const val = choice.value;
-  let resultText = '';
-
-  switch(val) {
-    case 'A':
-      resultText = `你的守護星座女神是天蠍座黑月赫卡忒，推薦風格是魔幻渲染、水晶銀箔，適合黑紫、金屬亮片色系。`;
-      break;
-    case 'B':
-      resultText = `你的守護星座女神是雙魚座夢境女神，推薦風格是貝殼光、乳白琉璃，適合淡粉、乳白、光澤漸層色系。`;
-      break;
-    case 'C':
-      resultText = `你的守護星座女神是獅子座太陽女王，推薦風格是金箔設計、亮彩跳色，適合金、桃紅、寶石藍色系。`;
-      break;
-    case 'D':
-      resultText = `你的守護星座女神是處女座自然女神，推薦風格是極簡線條、小花乾燥，適合奶茶、霧感裸色色系。`;
-      break;
-  }
-
-  document.getElementById('result3').style.display = 'block';
-  document.getElementById('result3').textContent = resultText;
-}
-</script>
-
-</body>
-</html>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>靈魂色彩心理測驗 | YCL Nail Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>詠粸麗 美甲工作室 - 心理測驗</title>
   <style>
     body {
-      font-family: "Noto Sans TC", sans-serif;
-      background-color: #fdfaf6;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background-color: #FAF5E4;
       color: #333;
-      margin: 0;
-      padding: 20px;
+      margin: 20px;
       line-height: 1.6;
     }
     h1, h2 {
-      color: #bfa76f;
+      color: #b58c44; /* 金色調 */
       text-align: center;
     }
-    .section {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    label {
-      display: block;
-      margin: 10px 0;
-    }
-    button {
-      display: block;
-      margin: 20px auto;
-      background-color: #bfa76f;
-      color: white;
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
+    .test-section {
+      background: white;
       border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(181,140,68,0.3);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    label, select, input[type="radio"] {
+      font-size: 16px;
+    }
+    select {
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #b58c44;
+      border-radius: 4px;
+      background: #fff;
+      color: #333;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
       cursor: pointer;
     }
+    button {
+      background-color: #b58c44;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
     button:hover {
-      background-color: #a8905c;
+      background-color: #9c7540;
     }
     .result {
-      background-color: #fff9ec;
-      padding: 15px;
-      border-left: 5px solid #bfa76f;
-      margin-top: 20px;
+      margin-top: 16px;
       font-weight: bold;
+      color: #704a02;
     }
   </style>
 </head>
 <body>
-  <h1>✨ 你的靈魂色彩是什麼？</h1>
-  <div class="section">
-    <h2>Step 1：請選擇你的星座屬性</h2>
-    <label><input type="radio" name="zodiac" value="火象"> 火象（牡羊／獅子／射手）</label>
-    <label><input type="radio" name="zodiac" value="土象"> 土象（金牛／處女／魔羯）</label>
-    <label><input type="radio" name="zodiac" value="風象"> 風象（雙子／天秤／水瓶）</label>
-    <label><input type="radio" name="zodiac" value="水象"> 水象（巨蟹／天蠍／雙魚）</label>
+  <h1>詠粸麗 美甲工作室</h1>
+  <h2>心理測驗系列：美甲風格推薦</h2>
 
-    <h2>Step 2：請憑直覺選一張神秘牌卡</h2>
-    <label><input type="radio" name="intuition" value="A"> A. 一道森林的月光</label>
-    <label><input type="radio" name="intuition" value="B"> B. 深海裡的光點</label>
-    <label><input type="radio" name="intuition" value="C"> C. 漂浮的彩色氣泡</label>
-    <label><input type="radio" name="intuition" value="D"> D. 紫水晶寶石</label>
+  <!-- 測驗一：靈魂色彩 -->
+  <div class="test-section" id="test1">
+    <h3>✨測驗一：你的靈魂色彩是什麼？【星座＋直覺題】</h3>
+    <label for="q1-zodiac">Step 1. 選擇你的太陽星座：</label>
+    <select id="q1-zodiac">
+      <option value="">請選擇星座</option>
+      <option value="fire">♈ 牡羊 / ♌ 獅子 / ♐ 射手</option>
+      <option value="earth">♉ 金牛 / ♍ 處女 / ♑ 魔羯</option>
+      <option value="air">♊ 雙子 / ♎ 天秤 / ♒ 水瓶</option>
+      <option value="water">♋ 巨蟹 / ♏ 天蠍 / ♓ 雙魚</option>
+    </select>
 
-    <button onclick="showResult()">看結果</button>
+    <label for="q1-intuition">Step 2. 閉上眼，直覺選一張神秘牌卡：</label>
+    <select id="q1-intuition">
+      <option value="">請選擇牌卡</option>
+      <option value="A">一道森林的月光</option>
+      <option value="B">深海裡的光點</option>
+      <option value="C">漂浮的彩色氣泡</option>
+      <option value="D">紫水晶寶石</option>
+    </select>
 
-    <div id="result" class="result" style="display:none;"></div>
+    <button onclick="calculateTest1()">看結果</button>
+    <div class="result" id="result1"></div>
+  </div>
+
+  <!-- 測驗二：潛意識測色 -->
+  <div class="test-section" id="test2">
+    <h3>🔮測驗二：潛意識測色測驗（沒有星座也可用）</h3>
+    <p>問題：哪一張最吸引你？</p>
+    <div class="options">
+      <label><input type="radio" name="q2" value="fire"> 1. 火焰裡閃爍的金屬</label>
+      <label><input type="radio" name="q2" value="forest"> 2. 雨後濕潤的森林</label>
+      <label><input type="radio" name="q2" value="ice"> 3. 冰雪中的玻璃球</label>
+      <label><input type="radio" name="q2" value="moon"> 4. 月亮照著湖水的倒影</label>
+    </div>
+    <button onclick="calculateTest2()">看結果</button>
+    <div class="result" id="result2"></div>
+  </div>
+
+  <!-- 測驗三：守護星座女神 -->
+  <div class="test-section" id="test3">
+    <h3>🌙測驗三：你的守護星座女神是誰？</h3>
+    <p>問題：你最近最常出現的情緒是？</p>
+    <div class="options">
+      <label><input type="radio" name="q3" value="A"> A. 想要重生，來點改變</label>
+      <label><input type="radio" name="q3" value="B"> B. 心煩累累，需要安慰</label>
+      <label><input type="radio" name="q3" value="C"> C. 很開心，想亮眼出場</label>
+      <label><input type="radio" name="q3" value="D"> D. 心境穩定，想簡單放鬆</label>
+    </div>
+    <button onclick="calculateTest3()">看結果</button>
+    <div class="result" id="result3"></div>
   </div>
 
   <script>
-    const colorMap = {
-      '火象': {
-        'A': '神秘霧灰紫',
-        'B': '深邃藏藍色',
-        'C': '電光桃粉',
-        'D': '閃亮橘金'
+    // 測驗一結果對照表
+    const test1Results = {
+      fire: {
+        A: "神秘霧灰紫",
+        B: "深邃藏藍色",
+        C: "電光桃粉",
+        D: "閃亮橘金"
       },
-      '土象': {
-        'A': '苔綠與裸色',
-        'B': '湖水灰綠',
-        'C': '奶茶橘粉',
-        'D': '星鑽銀白'
+      earth: {
+        A: "苔綠與裸色",
+        B: "湖水灰綠",
+        C: "奶茶橘粉",
+        D: "星鑽銀白"
       },
-      '風象': {
-        'A': '太空金屬紫',
-        'B': '霧感藍灰',
-        'C': '糖果撞色',
-        'D': '星座銀河'
+      air: {
+        A: "太空金屬紫",
+        B: "霧感藍灰",
+        C: "糖果撞色",
+        D: "星座銀河"
       },
-      '水象': {
-        'A': '冰透藍紫',
-        'B': '黑金渲染',
-        'C': '貝殼珠光',
-        'D': '紫晶琉璃'
+      water: {
+        A: "冰透藍紫",
+        B: "黑金渲染",
+        C: "貝殼珠光",
+        D: "紫晶琉璃"
       }
     };
 
-    function showResult() {
-      const zodiac = document.querySelector('input[name="zodiac"]:checked');
-      const intuition = document.querySelector('input[name="intuition"]:checked');
-      const resultBox = document.getElementById('result');
+    function calculateTest1() {
+      const zodiac = document.getElementById('q1-zodiac').value;
+      const intuition = document.getElementById('q1-intuition').value;
+      const resultDiv = document.getElementById('result1');
 
       if (!zodiac || !intuition) {
-        resultBox.innerHTML = "請先選擇星座與直覺卡片喔！";
-        resultBox.style.display = "block";
+        resultDiv.textContent = "請完成所有選項！";
         return;
       }
 
-      const color = colorMap[zodiac.value][intuition.value];
-      resultBox.innerHTML = `🌈 你的靈魂色彩是：<strong>${color}</strong>！<br><br>這個色彩代表著你當下的能量，適合做成指尖設計，展現你今天的氣場～快預約來體驗吧！`;
-      resultBox.style.display = "block";
+      const color = test1Results[zodiac][intuition];
+      resultDiv.textContent = `你的靈魂色彩是：${color}。推薦今天試試這個美甲風格吧！`;
+    }
+
+    // 測驗二結果對照
+    const test2Results = {
+      fire: {
+        style: "氣勢女王、華麗風",
+        color: "金屬亮片、紅棕、電鍍"
+      },
+      forest: {
+        style: "文青森林系、乾燥花風",
+        color: "墨綠、土色、霧感橘"
+      },
+      ice: {
+        style: "冰晶裸感、氣質風",
+        color: "銀白、透明感、藍系"
+      },
+      moon: {
+        style: "靈性系、星空漸層風",
+        color: "紫灰、深藍、光影"
+      }
+    };
+
+    function calculateTest2() {
+      const choices = document.getElementsByName('q2');
+      let selected = null;
+      for (const choice of choices) {
+        if (choice.checked) {
+          selected = choice.value;
+          break;
+        }
+      }
+      const resultDiv = document.getElementById('result2');
+      if (!selected) {
+        resultDiv.textContent = "請選擇一個選項！";
+        return;
+      }
+      const res = test2Results[selected];
+      resultDiv.textContent = `你喜歡的風格是：${res.style}，推薦顏色：${res.color}。`;
+    }
+
+    // 測驗三結果對照
+    const test3Results = {
+      A: {
+        goddess: "天蠍座（黑月赫卡忒）",
+        style: "魔幻渲染、水晶銀箔",
+        color: "黑紫、金屬亮片"
+      },
+      B: {
+        goddess: "雙魚座（夢境女神）",
+        style: "貝殼光、乳白琉璃",
+        color: "淡粉、乳白、光澤漸層"
+      },
+      C: {
+        goddess: "獅子座（太陽女王）",
+        style: "金箔設計、亮彩跳色",
+        color: "金、桃紅、寶石藍"
+      },
+      D: {
+        goddess: "處女座（自然女神）",
+        style: "極簡線條、小花乾燥",
+        color: "奶茶、霧感裸色"
+      }
+    };
+
+    function calculateTest3() {
+      const choices = document.getElementsByName('q3');
+      let selected = null;
+      for (const choice of choices) {
+        if (choice.checked) {
+          selected = choice.value;
+          break;
+        }
+      }
+      const resultDiv = document.getElementById('result3');
+      if (!selected) {
+        resultDiv.textContent = "請選擇一個選項！";
+        return;
+      }
+      const res = test3Results[selected];
+      resultDiv.textContent = `你的守護星座女神是${res.goddess}，推薦風格：${res.style}，色系為${res.color}。`;
     }
   </script>
 </body>
