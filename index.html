@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>YCL 美甲心理測驗</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", "微軟正黑體", sans-serif;
       background-color: #fff0f5;
       color: #333;
       padding: 20px;
       max-width: 960px;
       margin: auto;
     }
-    h2 {
+    h1, h2 {
       color: #d87093;
-      border-bottom: 2px solid #d87093;
+    }
+    h2 {
+      border-bottom: 2px dashed #d87093;
       padding-bottom: 5px;
     }
     .grid {
@@ -22,91 +24,91 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 20px;
+      justify-content: flex-start;
     }
-    .grid img {
+    .grid-item {
+      text-align: center;
       width: 120px;
+    }
+    .grid-item img {
+      width: 100%;
       height: 120px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
       border: 3px solid transparent;
     }
-    .grid img:hover {
+    .grid-item img:hover {
       border-color: #ff69b4;
+    }
+    .grid-item p {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #555;
     }
     .result {
       margin-top: 15px;
-      padding: 10px;
-      border: 1px dashed #999;
-      background-color: #fff;
-    }
-    .button {
-      display: inline-block;
-      background-color: #ff69b4;
-      color: white;
-      padding: 8px 16px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
+      padding: 12px;
+      border: 1px dashed #f08080;
+      background-color: #fffafc;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #c71585;
     }
   </style>
 </head>
 <body>
 
-  <h1>✨ YCL 美甲心理測驗 ✨</h1>
+  <h1>💅 YCL 美甲 ✨心理測驗遊戲</h1>
 
-  <!-- 測驗一：靈魂色彩（12星座分類 + 直覺牌卡） -->
-  <h2>🌈 測驗一：你的靈魂色彩？</h2>
-
-  <p>Step 1. 選擇你的星座：</p>
+  <h2>🌈 測驗一：找出你的靈魂色彩</h2>
+  <p>1️⃣ 選擇你的星座：</p>
   <div class="grid" id="zodiac">
-    <!-- 火象 -->
-    <img src="images/aries.jpg" alt="牡羊" data-element="火象"> <!-- 牡羊 -->
-    <img src="images/leo.jpg" alt="獅子" data-element="火象"> <!-- 獅子 -->
-    <img src="images/sagittarius.jpg" alt="射手" data-element="火象"> <!-- 射手 -->
+    <!-- 火象星座 -->
+    <div class="grid-item"><img src="images/aries.jpg" alt="牡羊" data-element="火象"><p>牡羊座</p></div>
+    <div class="grid-item"><img src="images/leo.jpg" alt="獅子" data-element="火象"><p>獅子座</p></div>
+    <div class="grid-item"><img src="images/sagittarius.jpg" alt="射手" data-element="火象"><p>射手座</p></div>
     <!-- 土象 -->
-    <img src="images/taurus.jpg" alt="金牛" data-element="土象"> <!-- 金牛 -->
-    <img src="images/virgo.jpg" alt="處女" data-element="土象"> <!-- 處女 -->
-    <img src="images/capricorn.jpg" alt="魔羯" data-element="土象"> <!-- 魔羯 -->
+    <div class="grid-item"><img src="images/taurus.jpg" alt="金牛" data-element="土象"><p>金牛座</p></div>
+    <div class="grid-item"><img src="images/virgo.jpg" alt="處女" data-element="土象"><p>處女座</p></div>
+    <div class="grid-item"><img src="images/capricorn.jpg" alt="魔羯" data-element="土象"><p>魔羯座</p></div>
     <!-- 風象 -->
-    <img src="images/gemini.jpg" alt="雙子" data-element="風象"> <!-- 雙子 -->
-    <img src="images/libra.jpg" alt="天秤" data-element="風象"> <!-- 天秤 -->
-    <img src="images/aquarius.jpg" alt="水瓶" data-element="風象"> <!-- 水瓶 -->
+    <div class="grid-item"><img src="images/gemini.jpg" alt="雙子" data-element="風象"><p>雙子座</p></div>
+    <div class="grid-item"><img src="images/libra.jpg" alt="天秤" data-element="風象"><p>天秤座</p></div>
+    <div class="grid-item"><img src="images/aquarius.jpg" alt="水瓶" data-element="風象"><p>水瓶座</p></div>
     <!-- 水象 -->
-    <img src="images/cancer.jpg" alt="巨蟹" data-element="水象"> <!-- 巨蟹 -->
-    <img src="images/scorpio.jpg" alt="天蠍" data-element="水象"> <!-- 天蠍 -->
-    <img src="images/pisces.jpg" alt="雙魚" data-element="水象"> <!-- 雙魚 -->
+    <div class="grid-item"><img src="images/cancer.jpg" alt="巨蟹" data-element="水象"><p>巨蟹座</p></div>
+    <div class="grid-item"><img src="images/scorpio.jpg" alt="天蠍" data-element="水象"><p>天蠍座</p></div>
+    <div class="grid-item"><img src="images/pisces.jpg" alt="雙魚" data-element="水象"><p>雙魚座</p></div>
   </div>
 
-  <p>Step 2. 憑直覺選一張牌卡：</p>
+  <p>2️⃣ 憑直覺選一張牌卡：</p>
   <div class="grid" id="card">
-    <img src="images/moonlight.jpg" alt="森林月光" data-card="A"> <!-- A 森林月光 -->
-    <img src="images/deepsea.jpg" alt="深海光點" data-card="B"> <!-- B 深海光點 -->
-    <img src="images/bubbles.jpg" alt="彩色氣泡" data-card="C"> <!-- C 彩色氣泡 -->
-    <img src="images/amethyst.jpg" alt="紫水晶" data-card="D"> <!-- D 紫水晶 -->
+    <div class="grid-item"><img src="images/moonlight.jpg" alt="森林月光" data-card="A"><p>森林月光</p></div>
+    <div class="grid-item"><img src="images/deepsea.jpg" alt="深海光點" data-card="B"><p>深海光點</p></div>
+    <div class="grid-item"><img src="images/bubbles.jpg" alt="彩色氣泡" data-card="C"><p>彩色氣泡</p></div>
+    <div class="grid-item"><img src="images/amethyst.jpg" alt="紫水晶" data-card="D"><p>紫水晶</p></div>
   </div>
 
   <div class="result" id="result1"></div>
 
-  <!-- 測驗二：潛意識選圖 -->
-  <h2>🔮 測驗二：潛意識選圖測色</h2>
-  <p>哪一張圖片最吸引你？</p>
+  <h2>🔮 測驗二：潛意識選圖配色風格</h2>
+  <p>哪一張圖片最吸引你呢？</p>
   <div class="grid" id="subconscious">
-    <img src="images/firemetal.jpg" alt="火焰金屬" data-style="華麗風"> <!-- 火焰金屬 -->
-    <img src="images/forest.jpg" alt="森林濕潤" data-style="文青風"> <!-- 森林 -->
-    <img src="images/glassball.jpg" alt="冰雪玻璃球" data-style="氣質風"> <!-- 冰雪 -->
-    <img src="images/moonlake.jpg" alt="月湖倒影" data-style="靈性風"> <!-- 月湖 -->
+    <div class="grid-item"><img src="images/firemetal.jpg" alt="火焰金屬" data-style="華麗風"><p>火焰金屬</p></div>
+    <div class="grid-item"><img src="images/forest.jpg" alt="森林氣息" data-style="文青風"><p>森林氣息</p></div>
+    <div class="grid-item"><img src="images/glassball.jpg" alt="冰雪玻璃球" data-style="氣質風"><p>冰雪玻璃球</p></div>
+    <div class="grid-item"><img src="images/moonlake.jpg" alt="月湖倒影" data-style="靈性風"><p>月湖倒影</p></div>
   </div>
   <div class="result" id="result2"></div>
 
-  <!-- 測驗三：情緒對應星座女神 -->
-  <h2>🌙 測驗三：你的守護星座女神？</h2>
-  <p>你最近最常出現的情緒是？</p>
+  <h2>🌙 測驗三：最近的情緒代表哪位守護女神？</h2>
+  <p>選出你最常出現的情緒：</p>
   <div class="grid" id="emotion">
-    <img src="images/option-a.jpg" alt="A：想要改變" data-goddess="赫卡忒"> <!-- 黑月赫卡忒 -->
-    <img src="images/option-b.jpg" alt="B：需要安慰" data-goddess="夢境女神"> <!-- 雙魚夢女 -->
-    <img src="images/option-c.jpg" alt="C：想亮眼" data-goddess="太陽女王"> <!-- 獅子女王 -->
-    <img src="images/option-d.jpg" alt="D：想放鬆" data-goddess="自然女神"> <!-- 處女女神 -->
+    <div class="grid-item"><img src="images/option-a.jpg" alt="想要改變" data-goddess="赫卡忒"><p>想要改變</p></div>
+    <div class="grid-item"><img src="images/option-b.jpg" alt="需要安慰" data-goddess="夢境女神"><p>需要安慰</p></div>
+    <div class="grid-item"><img src="images/option-c.jpg" alt="想亮眼" data-goddess="太陽女王"><p>想亮眼</p></div>
+    <div class="grid-item"><img src="images/option-d.jpg" alt="想放鬆" data-goddess="自然女神"><p>想放鬆</p></div>
   </div>
   <div class="result" id="result3"></div>
 
@@ -124,47 +126,56 @@
     document.querySelectorAll('#card img').forEach(img => {
       img.onclick = () => {
         if (!selectedElement) {
-          alert("請先選擇星座");
+          alert("請先選擇星座唷 💫");
           return;
         }
         const card = img.dataset.card;
         const key = selectedElement + "-" + card;
         const resultMap = {
-          "火象-A": "神秘霧灰紫", "火象-B": "深邃藏藍", "火象-C": "電光桃粉", "火象-D": "閃亮橘金",
-          "土象-A": "苔綠裸色", "土象-B": "湖水灰綠", "土象-C": "奶茶橘粉", "土象-D": "星鑽銀白",
-          "風象-A": "太空金屬紫", "風象-B": "霧感藍灰", "風象-C": "糖果撞色", "風象-D": "星座銀河",
-          "水象-A": "冰透藍紫", "水象-B": "黑金渲染", "水象-C": "貝殼珠光", "水象-D": "紫晶琉璃"
+          "火象-A": "✨推薦你嘗試：神秘霧灰紫💕",
+          "火象-B": "✨推薦你嘗試：深邃藏藍💕",
+          "火象-C": "✨推薦你嘗試：電光桃粉💕",
+          "火象-D": "✨推薦你嘗試：閃亮橘金💕",
+          "土象-A": "✨推薦你嘗試：苔綠裸色💕",
+          "土象-B": "✨推薦你嘗試：湖水灰綠💕",
+          "土象-C": "✨推薦你嘗試：奶茶橘粉💕",
+          "土象-D": "✨推薦你嘗試：星鑽銀白💕",
+          "風象-A": "✨推薦你嘗試：太空金屬紫💕",
+          "風象-B": "✨推薦你嘗試：霧感藍灰💕",
+          "風象-C": "✨推薦你嘗試：糖果撞色💕",
+          "風象-D": "✨推薦你嘗試：星座銀河💕",
+          "水象-A": "✨推薦你嘗試：冰透藍紫💕",
+          "水象-B": "✨推薦你嘗試：黑金渲染💕",
+          "水象-C": "✨推薦你嘗試：貝殼珠光💕",
+          "水象-D": "✨推薦你嘗試：紫晶琉璃💕"
         };
-        document.getElementById('result1').innerText = "推薦風格色彩：" + (resultMap[key] || "請重新選擇");
+        document.getElementById('result1').innerText = resultMap[key] || "請再確認你的選擇 🌟";
       };
     });
 
     document.querySelectorAll('#subconscious img').forEach(img => {
       img.onclick = () => {
-        const style = img.dataset.style;
         const msg = {
-          "華麗風": "金屬亮片、紅棕色或電鍍感設計，適合氣勢女王",
-          "文青風": "霧感橘、墨綠、乾燥花配色，清新自然",
-          "氣質風": "銀白、冰晶、裸感透亮，適合氣質系女孩",
-          "靈性風": "紫灰色調、星空漸層，療癒內在能量"
+          "華麗風": "💎 華麗系：金屬感、亮片、紅寶石色調，超適合閃亮女神！",
+          "文青風": "🌿 文青系：霧感綠、橘裸、花草系配色，簡約療癒感 🪴",
+          "氣質風": "❄️ 氣質系：冰晶白、裸粉、簡約閃光，展現你內斂的氣質 ✨",
+          "靈性風": "🌙 靈性系：藍紫色、星空漸層、銀河光影，療癒又夢幻 🌌"
         };
-        document.getElementById('result2').innerText = msg[style];
+        document.getElementById('result2').innerText = msg[img.dataset.style];
       };
     });
 
     document.querySelectorAll('#emotion img').forEach(img => {
       img.onclick = () => {
-        const goddess = img.dataset.goddess;
         const text = {
-          "赫卡忒": "黑月女神赫卡忒：推薦魔幻黑紫、水晶銀箔風格",
-          "夢境女神": "雙魚夢境女神：推薦乳白貝殼光、漸層光澤設計",
-          "太陽女王": "獅子女王：推薦金箔、跳色、寶石感設計",
-          "自然女神": "處女座自然女神：推薦小花、極簡風、霧感裸色"
+          "赫卡忒": "🖤 赫卡忒：推薦黑紫銀、渲染閃光風格，適合迎接全新轉變✨",
+          "夢境女神": "💤 夢境女神：選擇夢幻的乳白、貝殼光、漸層粉設計 💫",
+          "太陽女王": "🌞 太陽女王：推薦金箔跳色、華麗紅橘，閃亮全場！",
+          "自然女神": "🌼 自然女神：霧感裸色、小花、綠意清新風格，舒心又療癒 🍀"
         };
-        document.getElementById('result3').innerText = text[goddess];
+        document.getElementById('result3').innerText = text[img.dataset.goddess];
       };
     });
   </script>
-
 </body>
 </html>
