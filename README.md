@@ -1,53 +1,49 @@
-# Kokopelli Phone Lab & 詠稘麗 YCL Studio - 聯合首頁
+# Kokopelli Phone Lab × 詠稘麗美甲工作室 | 聯合首頁說明
 
-歡迎來到我們的品牌聯合入口網站 👋  
-這裡集合了兩間獨立而專業的在地品牌：  
-**手機工坊·科科佩利 Kokopelli Phone Lab**（手機維修｜太平區）  
-**詠稘麗美甲工作室 YCL Nail Studio**（美甲設計｜一中商圈）
+這是一個整合兩個品牌的聯合首頁專案，由一對夫妻各自經營的獨立事業共同協作：
 
 ---
 
 ## 📱 手機工坊·科科佩利 Kokopelli Phone Lab
 
-- 地點：台中市太平區宜佳街43號  
-- 專業手機維修：螢幕更換、電池更換、資料轉移、系統優化  
-- 專注未來感科技風，強調快速、專業、透明的服務流程  
-- LINE：[@122pntjd](https://line.me/R/ti/p/@122pntjd)  
-- IG：[@kokopelli_phone_lab](https://www.instagram.com/kokopelli_phone_lab)
-
-👉 [前往手機工坊網站](https://una1103.github.io/kokopelli_phone_lab/)
+- 經營者：科科（張世成）
+- 服務內容：手機維修｜螢幕更換｜電池更換｜系統優化｜資料轉移
+- 地點：台中市太平區宜佳街 43 號
+- 官方網站：[https://una1103.github.io/kokopelli_phone_lab/](https://una1103.github.io/kokopelli_phone_lab/)
+- IG：[kokopelli_phone_lab](https://www.instagram.com/kokopelli_phone_lab)
+- LINE：[@122pntjd](https://line.me/R/ti/p/@122pntjd)
 
 ---
 
 ## 💅 詠稘麗美甲工作室 YCL Nail Studio
 
-- 公司行號名稱：**詠稘麗有限公司**  
-- 負責人：YCL 老闆娘（合法登記，風格主理人）  
-- 地點：台中市北區一中街商圈  
-- 專業凝膠美甲、手足保養、個人化設計與學生優惠方案  
-- IG：[@ycl_nail_studio](https://www.instagram.com/ycl_nail_studio)  
-
-👉 [前往詠稘麗美甲官網](https://example.com/ycl-nail-studio) （＊請補上實際網址）
+- 公司行號：詠稘麗有限公司（合法立案）
+- 負責人：YCL 老闆娘
+- 服務內容：美甲設計｜手足保養｜凝膠彩繪｜風格造型
+- 地點：台中市北區一中街商圈
+- 官方網站：[https://una1103.github.io/ycl_nail_studio/](https://una1103.github.io/ycl_nail_studio/)
+- IG：`@ycl_nail_studio`（＊請補上正確帳號）
 
 ---
 
-## 💡 我們的品牌理念
+## 🧠 品牌理念（共同核心）
 
-雖然我們經營的是兩個完全不同的領域，一個是**硬派科技維修**，一個是**美感風格設計**，但我們有著共同的核心信念：
+我們相信每一位顧客不只需要「專業的服務」，更值得感受到「人與人之間的用心」。
 
 > 「用專業打造信任，用溫度經營長久。」
 
-我們相信：「**科技與美感都值得被認真對待。**」  
-每一位走進我們店裡的顧客，不論是來修手機還是做美甲，都值得被尊重、照顧、並留下好印象。
+不論你是來修手機，還是做美甲，我們都希望讓你感受到：**科技與美感，都可以兼容並蓄。**
 
 ---
 
-## 🧭 共同願景
+## 🌐 聯合首頁功能設計
 
-- 成為台中在地最值得信賴的手機維修與美甲選擇
-- 創造一個融合專業與風格的生活品牌
-- 以誠信、細心、透明經營長久客戶關係
+本專案首頁（`index.html`）提供以下功能：
+
+- 雙品牌視覺呈現（左手機、右美甲）
+- 中英語系切換
+- 各自連結導入各自官方網站
+- 品牌理念區塊
+- 社群與聯絡方式整合
 
 ---
-
-📌 若你是顧客、朋友、想合作的設計師、或單純支持我們，歡迎追蹤我們社群，或到門市坐坐聊聊！
