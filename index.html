@@ -1,181 +1,208 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>YCL 美甲心理測驗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>科科佩利 × 詠稘麗 | 聯合品牌首頁</title>
+  <meta name="description" content="科科佩利手機工坊 × 詠稘麗美甲工作室｜專業手機維修與時尚美甲的品牌整合首頁">
+  <meta property="og:title" content="Kokopelli × 詠稘麗 | 聯合品牌首頁" />
+  <meta property="og:description" content="台中在地雙品牌，手機維修 × 美甲設計的完美結合" />
+  <meta property="og:image" content="https://una1103.github.io/assets/og-image.jpg" />
+  <meta property="og:url" content="https://una1103.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: "Segoe UI", "微軟正黑體", sans-serif;
-      background-color: #fff0f5;
-      color: #333;
-      padding: 20px;
-      max-width: 960px;
-      margin: auto;
+      margin: 0;
+      font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+      background: #f8f9fa;
+      color: #2b2b2b;
     }
-    h1, h2 {
-      color: #d87093;
+    .topbar {
+      background: #111;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: right;
+      font-size: 0.9em;
     }
-    h2 {
-      border-bottom: 2px dashed #d87093;
-      padding-bottom: 5px;
+    .topbar select {
+      background: #fff;
+      color: #111;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
     }
-    .grid {
+    .container {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-      justify-content: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+      min-height: 100vh;
+      align-items: center;
     }
-    .grid-item {
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 450px;
+      flex: 1 1 300px;
+      padding: 32px 24px;
       text-align: center;
-      width: 120px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .grid-item img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      border: 3px solid transparent;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
     }
-    .grid-item img:hover {
-      border-color: #ff69b4;
+    .brand-logo {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 12px;
     }
-    .grid-item p {
-      margin-top: 5px;
-      font-size: 14px;
+    .desc {
+      font-size: 1em;
+      margin: 12px 0 24px;
       color: #555;
+      min-height: 48px;
     }
-    .result {
-      margin-top: 15px;
-      padding: 12px;
-      border: 1px dashed #f08080;
-      background-color: #fffafc;
-      border-radius: 10px;
-      font-size: 16px;
-      color: #c71585;
+    .button {
+      display: inline-block;
+      background: #3b7aff;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .button:hover {
+      background: #1f5eff;
+    }
+    .ycl .button {
+      background: #f26f8c;
+    }
+    .ycl .button:hover {
+      background: #d6546f;
+    }
+    .social {
+      margin-top: 16px;
+      font-size: 0.9em;
+    }
+    .social a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #666;
+      user-select: none;
+    }
+    .social a:hover {
+      color: #3b7aff;
+    }
+    .ycl .social a:hover {
+      color: #f26f8c;
+    }
+    .map-link {
+      font-size: 0.85em;
+      margin-top: 10px;
+      color: #999;
+      user-select: none;
+    }
+    .map-link a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .map-link a:hover {
+      text-decoration: underline;
+    }
+    .carousel {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 0.95em;
+      color: #888;
+      min-height: 1.4em;
+    }
+    [data-lang] {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 10px;
+      }
     }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+    }
+    function rotateCarousel() {
+      document.querySelectorAll('.carousel').forEach(carousel => {
+        const items = carousel.querySelectorAll('.carousel-item');
+        let i = 0;
+        setInterval(() => {
+          items.forEach((item, idx) => {
+            item.style.display = idx === i ? 'block' : 'none';
+          });
+          i = (i + 1) % items.length;
+        }, 4000);
+      });
+    }
+    window.onload = () => {
+      switchLang('zh');
+      rotateCarousel();
+      document.getElementById('lang-select').addEventListener('change', e => {
+        switchLang(e.target.value);
+      });
+    };
+  </script>
 </head>
 <body>
-
-  <h1>💅 YCL 美甲 ✨心理測驗遊戲</h1>
-
-  <h2>🌈 測驗一：找出你的靈魂色彩</h2>
-  <p>1️⃣ 選擇你的星座：</p>
-  <div class="grid" id="zodiac">
-    <!-- 火象星座 -->
-    <div class="grid-item"><img src="images/aries.jpg" alt="牡羊" data-element="火象"><p>牡羊座</p></div>
-    <div class="grid-item"><img src="images/leo.jpg" alt="獅子" data-element="火象"><p>獅子座</p></div>
-    <div class="grid-item"><img src="images/sagittarius.jpg" alt="射手" data-element="火象"><p>射手座</p></div>
-    <!-- 土象 -->
-    <div class="grid-item"><img src="images/taurus.jpg" alt="金牛" data-element="土象"><p>金牛座</p></div>
-    <div class="grid-item"><img src="images/virgo.jpg" alt="處女" data-element="土象"><p>處女座</p></div>
-    <div class="grid-item"><img src="images/capricorn.jpg" alt="魔羯" data-element="土象"><p>魔羯座</p></div>
-    <!-- 風象 -->
-    <div class="grid-item"><img src="images/gemini.jpg" alt="雙子" data-element="風象"><p>雙子座</p></div>
-    <div class="grid-item"><img src="images/libra.jpg" alt="天秤" data-element="風象"><p>天秤座</p></div>
-    <div class="grid-item"><img src="images/aquarius.jpg" alt="水瓶" data-element="風象"><p>水瓶座</p></div>
-    <!-- 水象 -->
-    <div class="grid-item"><img src="images/cancer.jpg" alt="巨蟹" data-element="水象"><p>巨蟹座</p></div>
-    <div class="grid-item"><img src="images/scorpio.jpg" alt="天蠍" data-element="水象"><p>天蠍座</p></div>
-    <div class="grid-item"><img src="images/pisces.jpg" alt="雙魚" data-element="水象"><p>雙魚座</p></div>
+  <div class="topbar">
+    語言 Language：
+    <select id="lang-select" aria-label="語言切換">
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+    </select>
   </div>
-
-  <p>2️⃣ 憑直覺選一張牌卡：</p>
-  <div class="grid" id="card">
-    <div class="grid-item"><img src="images/moonlight.jpg" alt="森林月光" data-card="A"><p>森林月光</p></div>
-    <div class="grid-item"><img src="images/deepsea.jpg" alt="深海光點" data-card="B"><p>深海光點</p></div>
-    <div class="grid-item"><img src="images/bubbles.jpg" alt="彩色氣泡" data-card="C"><p>彩色氣泡</p></div>
-    <div class="grid-item"><img src="images/amethyst.jpg" alt="紫水晶" data-card="D"><p>紫水晶</p></div>
-  </div>
-
-  <div class="result" id="result1"></div>
-
-  <h2>🔮 測驗二：潛意識選圖配色風格</h2>
-  <p>哪一張圖片最吸引你呢？</p>
-  <div class="grid" id="subconscious">
-    <div class="grid-item"><img src="images/firemetal.jpg" alt="火焰金屬" data-style="華麗風"><p>火焰金屬</p></div>
-    <div class="grid-item"><img src="images/forest.jpg" alt="森林氣息" data-style="文青風"><p>森林氣息</p></div>
-    <div class="grid-item"><img src="images/glassball.jpg" alt="冰雪玻璃球" data-style="氣質風"><p>冰雪玻璃球</p></div>
-    <div class="grid-item"><img src="images/moonlake.jpg" alt="月湖倒影" data-style="靈性風"><p>月湖倒影</p></div>
-  </div>
-  <div class="result" id="result2"></div>
-
-  <h2>🌙 測驗三：最近的情緒代表哪位守護女神？</h2>
-  <p>選出你最常出現的情緒：</p>
-  <div class="grid" id="emotion">
-    <div class="grid-item"><img src="images/option-a.jpg" alt="想要改變" data-goddess="赫卡忒"><p>想要改變</p></div>
-    <div class="grid-item"><img src="images/option-b.jpg" alt="需要安慰" data-goddess="夢境女神"><p>需要安慰</p></div>
-    <div class="grid-item"><img src="images/option-c.jpg" alt="想亮眼" data-goddess="太陽女王"><p>想亮眼</p></div>
-    <div class="grid-item"><img src="images/option-d.jpg" alt="想放鬆" data-goddess="自然女神"><p>想放鬆</p></div>
-  </div>
-  <div class="result" id="result3"></div>
-
-  <script>
-    let selectedElement = "";
-
-    document.querySelectorAll('#zodiac img').forEach(img => {
-      img.onclick = () => {
-        selectedElement = img.dataset.element;
-        document.querySelectorAll('#zodiac img').forEach(i => i.style.borderColor = "transparent");
-        img.style.borderColor = "#ff69b4";
-      };
-    });
-
-    document.querySelectorAll('#card img').forEach(img => {
-      img.onclick = () => {
-        if (!selectedElement) {
-          alert("請先選擇星座唷 💫");
-          return;
-        }
-        const card = img.dataset.card;
-        const key = selectedElement + "-" + card;
-        const resultMap = {
-          "火象-A": "哇！你的靈魂色彩是神秘霧灰紫呢💜，很適合做出神秘又高雅的美甲款式唷～✨",
-  "火象-B": "你適合深邃藏藍色💙，低調又帶點時尚感，做美甲一定超有質感！",
-  "火象-C": "電光桃粉粉紅色超可愛💖，是活力滿滿又少女感的選擇，指尖閃耀不停！",
-  "火象-D": "閃亮橘金色系🔥，超適合夏天的熱情美甲，吸睛百分百！",
-  "土象-A": "苔綠裸色好自然🌿，文青又療癒的風格，讓人一看就想戀愛～",
-  "土象-B": "湖水灰綠色涼爽清新💧，清新的自然感美甲讓人舒服放鬆～",
-  "土象-C": "奶茶橘粉超甜美🍑，適合想要溫柔風格的妳，做指甲好適合！",
-  "土象-D": "星鑽銀白閃閃✨，完美的派對女王必備款，讓你當焦點！",
-  "風象-A": "太空金屬紫酷帥感滿分🌌，獨特個性的妳做這款絕對不撞款～",
-  "風象-B": "霧感藍灰超有質感❄️，氣質美甲簡約又不失高雅～",
-  "風象-C": "糖果撞色甜甜風🍬，可愛又活潑的指尖藝術，妳值得擁有！",
-  "風象-D": "星座銀河閃耀星光⭐️，夢幻系美甲，讓妳整天都像女神！",
-  "水象-A": "冰透藍紫像水晶般晶瑩❄️，柔和又夢幻的色彩，完美夏日美甲～",
-  "水象-B": "黑金渲染神秘又霸氣🖤，妳的指尖就是魅力焦點！",
-  "水象-C": "貝殼珠光溫柔閃耀🐚，自然光感的美甲，妳一定會喜歡～",
-  "水象-D": "紫晶琉璃浪漫又優雅💜，這種高級感美甲絕對讓人心動！"
-        };
-        document.getElementById('result1').innerText = resultMap[key] || "請再確認你的選擇 🌟";
-      };
-    });
-
-    document.querySelectorAll('#subconscious img').forEach(img => {
-      img.onclick = () => {
-        const msg = {
-            "華麗風": "哇！華麗風超適合愛閃亮的妳💎，金屬感和寶石色，讓指尖成為聚光燈！",
-  "文青風": "文青風好療癒🌿，霧面質感加花草元素，打造溫柔又有氣質的指尖～",
-  "氣質風": "氣質風簡約又高雅❄️，裸粉和冰晶白的搭配，低調卻超迷人！",
-  "靈性風": "靈性風星空感滿滿🌙，藍紫和銀河光影，做出夢幻又獨特的美甲款！"
-        };
-        document.getElementById('result2').innerText = msg[img.dataset.style];
-      };
-    });
-
-    document.querySelectorAll('#emotion img').forEach(img => {
-      img.onclick = () => {
-        const text = {
-          "赫卡忒": "最近想改變的你需要點神秘力量🖤，黑紫銀的設計會讓你更有魅力喔！",
-  "夢境女神": "溫柔的夢境女神加持💤，乳白和貝殼光的漸層指甲讓妳甜美又夢幻～",
-  "太陽女王": "熱情的太陽女王🌞，金箔和紅橘色系美甲，讓妳的光芒無法被忽視！",
-  "自然女神": "親近自然的妳🍀，霧面裸色加花朵元素，美甲舒心又可愛，超適合！"
-        };
-        document.getElementById('result3').innerText = text[img.dataset.goddess];
-      };
-    });
-  </script>
+  <main class="container" role="main">
+    <section class="card kokopelli" aria-labelledby="kokopelli-title">
+      <h1 id="kokopelli-title" class="brand-logo">📱 科科佩利手機工坊</h1>
+      <p class="desc" data-lang="zh">太平區專業手機維修｜快速、透明、有溫度的3C服務體驗</p>
+      <p class="desc" data-lang="en">Professional phone repair in Taiping｜Fast, transparent, and reliable</p>
+      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank" rel="noopener" class="button">進入網站</a>
+      <nav class="social" aria-label="科科佩利社群連結">
+        <a href="https://www.instagram.com/kokopelli_phone_lab" target="_blank" rel="noopener">Instagram</a> |
+        <a href="https://line.me/R/ti/p/@122pntjd" target="_blank" rel="noopener">LINE</a>
+      </nav>
+      <p class="map-link">
+        <a href="https://maps.app.goo.gl/gcZtkisfwVZRKqzt6" target="_blank" rel="noopener">📍 查看地圖</a>
+      </p>
+      <div class="carousel" aria-live="polite" aria-atomic="true">
+        <p class="carousel-item">「螢幕修得好，客戶不會跑！」</p>
+        <p class="carousel-item" style="display:none">「快速維修，是我們對效率的承諾」</p>
+        <p class="carousel-item" style="display:none">「修得好也要修得帥，才叫科科佩利」</p>
+      </div>
+    </section>
+    <section class="card ycl" aria-labelledby="ycl-title">
+      <h1 id="ycl-title" class="brand-logo">💅 詠稘麗美甲工作室</h1>
+      <p class="desc" data-lang="zh">一中街風格美甲｜凝膠彩繪、手足保養、客製造型設計</p>
+      <p class="desc" data-lang="en">Yizhong’s top nail art — gel, design & care</p>
+      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank" rel="noopener" class="button">前往網站</a>
+      <nav class="social" aria-label="詠稘麗社群連結">
+        <a href="https://www.instagram.com/ycl_nail.studio/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+      <p class="map-link">
+        <a href="https://maps.app.goo.gl/UCRRuwMkA1Q95ePV6" target="_blank" rel="noopener">📍 查看地圖</a>
+      </p>
+      <div class="carousel" aria-live="polite" aria-atomic="true">
+        <p class="carousel-item">「每一筆彩繪，都是妳的風格延伸」</p>
+        <p class="carousel-item" style="display:none">「美，是從手開始的自信」</p>
+        <p class="carousel-item" style="display:none">「你的指尖，是我筆下的畫布」</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
