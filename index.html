@@ -1,208 +1,345 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>科科佩利 × 詠稘麗 | 聯合品牌首頁</title>
-  <meta name="description" content="科科佩利手機工坊 × 詠稘麗美甲工作室｜專業手機維修與時尚美甲的品牌整合首頁">
-  <meta property="og:title" content="Kokopelli × 詠稘麗 | 聯合品牌首頁" />
-  <meta property="og:description" content="台中在地雙品牌，手機維修 × 美甲設計的完美結合" />
-  <meta property="og:image" content="https://una1103.github.io/assets/og-image.jpg" />
-  <meta property="og:url" content="https://una1103.github.io/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-      background: #f8f9fa;
-      color: #2b2b2b;
-    }
-    .topbar {
-      background: #111;
-      color: #fff;
-      padding: 10px 20px;
-      text-align: right;
-      font-size: 0.9em;
-    }
-    .topbar select {
-      background: #fff;
-      color: #111;
-      padding: 4px 8px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      gap: 30px;
-      min-height: 100vh;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>科科佩利 × 詠稘麗 | 頂級聯合首頁</title>
+<meta name="description" content="科科佩利手機工坊 × 詠稘麗美甲工作室｜專業手機維修與時尚美甲的品牌整合首頁" />
+<meta property="og:title" content="Kokopelli × 詠稘麗 | 頂級聯合首頁" />
+<meta property="og:description" content="台中在地雙品牌，手機維修 × 美甲設計的完美結合" />
+<meta property="og:image" content="https://una1103.github.io/assets/og-image.jpg" />
+<meta property="og:url" content="https://una1103.github.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* reset & base */
+  *, *::before, *::after {box-sizing: border-box;}
+  body {
+    margin:0; font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+    background:#111; color:#eee; overflow-x:hidden;
+  }
+  a {text-decoration:none; color:inherit;}
+  .hidden {display:none !important;}
+  /* topbar */
+  .topbar {
+    background:#000a;
+    text-align:right; padding:10px 20px; font-size:0.9em;
+  }
+  .topbar select {
+    background:#fff; color:#111; border-radius:4px; padding:5px 10px; cursor:pointer;
+  }
+  /* Hero */
+  .hero {
+    min-height: 90vh; display:flex; flex-direction: column; justify-content:center; align-items:center;
+    background: linear-gradient(135deg, #3b7aff 0%, #f26f8c 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    text-align:center; padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  @keyframes gradientBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  .hero-logo {
+    font-size:4rem; font-weight:900; margin-bottom:0.5rem;
+    animation: pulseGlow 3s ease-in-out infinite;
+    text-shadow: 0 0 12px #fff, 0 0 24px #3b7aff, 0 0 32px #f26f8c;
+  }
+  @keyframes pulseGlow {
+    0%,100% {text-shadow: 0 0 8px #fff, 0 0 18px #3b7aff, 0 0 28px #f26f8c;}
+    50% {text-shadow: 0 0 18px #fff, 0 0 32px #3b7aff, 0 0 48px #f26f8c;}
+  }
+  .hero-subtitle {
+    font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem;
+    text-shadow: 0 0 6px rgba(0,0,0,0.3);
+  }
+  .hero-buttons a {
+    display:inline-block; margin:0 1rem; padding: 0.75rem 2rem; font-weight:700; border-radius: 30px;
+    background: linear-gradient(90deg, #3b7aff, #f26f8c);
+    color:#fff; box-shadow: 0 4px 15px rgba(246,111,140,0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .hero-buttons a:hover {
+    background: linear-gradient(90deg, #f26f8c, #3b7aff);
+    transform: scale(1.05);
+  }
+
+  /* content area */
+  main {
+    max-width: 1200px; margin: -4rem auto 2rem;
+    background: #fff; border-radius: 20px; padding: 2rem;
+    color: #222; box-shadow: 0 12px 32px rgb(0 0 0 / 0.15);
+  }
+  h2 {
+    font-weight: 700; color: #3b7aff; margin-bottom: 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  /* cards */
+  .brand-cards {
+    display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
+  }
+  .card {
+    flex: 1 1 360px; border-radius: 16px; padding: 2rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+    background: #fafafa;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  .card:hover {
+    box-shadow: 0 16px 48px rgb(0 0 0 / 0.2);
+    transform: translateY(-8px);
+  }
+  .card-logo {
+    font-size: 2.5rem; margin-bottom: 1rem;
+  }
+  .card-desc {
+    font-size: 1rem; margin-bottom: 1.5rem; color: #555;
+    min-height: 72px;
+  }
+  .card-btn {
+    display: inline-block; background: linear-gradient(90deg, #3b7aff, #f26f8c);
+    color: #fff; padding: 0.75rem 1.75rem; border-radius: 25px; font-weight: 700;
+    box-shadow: 0 6px 15px rgba(246,111,140,0.6);
+    transition: background 0.3s ease;
+  }
+  .card-btn:hover {
+    background: linear-gradient(90deg, #f26f8c, #3b7aff);
+  }
+  .ycl-btn {
+    background: linear-gradient(90deg, #f26f8c, #ff7e95);
+    box-shadow: 0 6px 15px rgba(242,111,140,0.9);
+  }
+  .ycl-btn:hover {
+    background: linear-gradient(90deg, #ff7e95, #f26f8c);
+  }
+  .social-links {
+    margin-top: 1rem;
+  }
+  .social-links a {
+    margin: 0 0.75rem; color: #777;
+    font-weight: 600; user-select:none;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #3b7aff;
+  }
+  .ycl-social-links a:hover {
+    color: #f26f8c;
+  }
+  .map-link {
+    margin-top: 0.75rem;
+    font-size: 0.9rem; color: #999;
+  }
+  .map-link a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .map-link a:hover {
+    text-decoration: underline;
+  }
+  /* carousel */
+  .carousel {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #888;
+    min-height: 1.6rem;
+  }
+  /* 客戶見證 */
+  .testimonial-section {
+    background: #f0f8ff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+  }
+  .testimonial-title {
+    font-size: 1.75rem; color: #3b7aff; margin-bottom: 1rem; font-weight: 700;
+    text-align: center;
+  }
+  .testimonial-list {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    max-width: 320px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .testimonial-avatar {
+    width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+    border: 2px solid #3b7aff;
+  }
+  .testimonial-text {
+    font-style: italic; color: #555;
+  }
+  /* social feed 模擬 */
+  .social-feed {
+    margin-top: 3rem;
+  }
+  .social-feed h3 {
+    color: #3b7aff;
+    margin-bottom: 1rem;
+  }
+  .feed-posts {
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+  }
+  .feed-post {
+    width: 120px; height: 120px; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.12);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .feed-post:hover {
+    transform: scale(1.1);
+  }
+  .feed-post img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  /* 彈窗 */
+  .popup-overlay {
+    position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4);
+    display: flex; justify-content:center; align-items:center;
+    visibility: hidden; opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+  }
+  .popup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .popup {
+    background: #fff; padding: 2rem 2.5rem; border-radius: 20px;
+    max-width: 400px; width: 90%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    text-align: center;
+    position: relative;
+  }
+  .popup h2 {
+    margin-bottom: 1rem; color: #3b7aff;
+  }
+  .popup input[type="email"] {
+    width: 100%; padding: 0.75rem 1rem; margin-bottom: 1rem;
+    font-size: 1rem; border-radius: 8px; border: 1px solid #ccc;
+  }
+  .popup button {
+    background: #3b7aff; color: #fff; border:none; border-radius: 8px;
+    padding: 0.75rem 2rem; font-weight: 700; cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .popup button:hover {
+    background: #1f5eff;
+  }
+  .popup-close {
+    position: absolute; top: 1rem; right: 1rem; font-size: 1.5rem;
+    color: #aaa; cursor: pointer;
+    user-select:none;
+  }
+  .popup-close:hover {
+    color: #3b7aff;
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+    .brand-cards {
+      flex-direction: column;
       align-items: center;
     }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      max-width: 450px;
-      flex: 1 1 300px;
-      padding: 32px 24px;
-      text-align: center;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    .testimonial-list {
+      flex-direction: column;
+      align-items: center;
     }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
+</style>
+<script>
+  // 語言切換
+  function switchLang(lang) {
+    document.querySelectorAll("[data-lang]").forEach(el=>{
+      el.style.display = (el.dataset.lang === lang) ? 'block' : 'none';
+    });
+  }
+  // 輪播客戶見證
+  function rotateCarousel() {
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+      const items = carousel.querySelectorAll('.carousel-item');
+      let i = 0;
+      setInterval(() => {
+        items.forEach((item, idx) => {
+          item.style.display = idx === i ? 'block' : 'none';
+        });
+        i = (i + 1) % items.length;
+      }, 4000);
+    });
+  }
+  // 彈窗控制
+  function showPopup() {
+    document.getElementById('popup').classList.add('active');
+  }
+  function closePopup() {
+    document.getElementById('popup').classList.remove('active');
+  }
+  // 簡易訂閱提交模擬
+  function subscribe(event) {
+    event.preventDefault();
+    const email = document.getElementById('emailInput').value.trim();
+    if(!email) {
+      alert('請輸入 Email');
+      return;
     }
-    .brand-logo {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-    .desc {
-      font-size: 1em;
-      margin: 12px 0 24px;
-      color: #555;
-      min-height: 48px;
-    }
-    .button {
-      display: inline-block;
-      background: #3b7aff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-      transition: background 0.3s;
-      user-select: none;
-    }
-    .button:hover {
-      background: #1f5eff;
-    }
-    .ycl .button {
-      background: #f26f8c;
-    }
-    .ycl .button:hover {
-      background: #d6546f;
-    }
-    .social {
-      margin-top: 16px;
-      font-size: 0.9em;
-    }
-    .social a {
-      margin: 0 8px;
-      text-decoration: none;
-      color: #666;
-      user-select: none;
-    }
-    .social a:hover {
-      color: #3b7aff;
-    }
-    .ycl .social a:hover {
-      color: #f26f8c;
-    }
-    .map-link {
-      font-size: 0.85em;
-      margin-top: 10px;
-      color: #999;
-      user-select: none;
-    }
-    .map-link a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .map-link a:hover {
-      text-decoration: underline;
-    }
-    .carousel {
-      margin-top: 20px;
-      font-style: italic;
-      font-size: 0.95em;
-      color: #888;
-      min-height: 1.4em;
-    }
-    [data-lang] {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      .container {
-        padding: 20px 10px;
-      }
-    }
-  </style>
-  <script>
-    function switchLang(lang) {
-      document.querySelectorAll("[data-lang]").forEach(el => {
-        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-      });
-    }
-    function rotateCarousel() {
-      document.querySelectorAll('.carousel').forEach(carousel => {
-        const items = carousel.querySelectorAll('.carousel-item');
-        let i = 0;
-        setInterval(() => {
-          items.forEach((item, idx) => {
-            item.style.display = idx === i ? 'block' : 'none';
-          });
-          i = (i + 1) % items.length;
-        }, 4000);
-      });
-    }
-    window.onload = () => {
-      switchLang('zh');
-      rotateCarousel();
-      document.getElementById('lang-select').addEventListener('change', e => {
-        switchLang(e.target.value);
-      });
-    };
-  </script>
-</head>
-<body>
-  <div class="topbar">
-    語言 Language：
-    <select id="lang-select" aria-label="語言切換">
-      <option value="zh">中文</option>
-      <option value="en">English</option>
-    </select>
-  </div>
-  <main class="container" role="main">
-    <section class="card kokopelli" aria-labelledby="kokopelli-title">
-      <h1 id="kokopelli-title" class="brand-logo">📱 科科佩利手機工坊</h1>
-      <p class="desc" data-lang="zh">太平區專業手機維修｜快速、透明、有溫度的3C服務體驗</p>
-      <p class="desc" data-lang="en">Professional phone repair in Taiping｜Fast, transparent, and reliable</p>
-      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank" rel="noopener" class="button">進入網站</a>
-      <nav class="social" aria-label="科科佩利社群連結">
-        <a href="https://www.instagram.com/kokopelli_phone_lab" target="_blank" rel="noopener">Instagram</a> |
-        <a href="https://line.me/R/ti/p/@122pntjd" target="_blank" rel="noopener">LINE</a>
-      </nav>
-      <p class="map-link">
-        <a href="https://maps.app.goo.gl/gcZtkisfwVZRKqzt6" target="_blank" rel="noopener">📍 查看地圖</a>
-      </p>
-      <div class="carousel" aria-live="polite" aria-atomic="true">
-        <p class="carousel-item">「螢幕修得好，客戶不會跑！」</p>
-        <p class="carousel-item" style="display:none">「快速維修，是我們對效率的承諾」</p>
-        <p class="carousel-item" style="display:none">「修得好也要修得帥，才叫科科佩利」</p>
-      </div>
-    </section>
-    <section class="card ycl" aria-labelledby="ycl-title">
-      <h1 id="ycl-title" class="brand-logo">💅 詠稘麗美甲工作室</h1>
-      <p class="desc" data-lang="zh">一中街風格美甲｜凝膠彩繪、手足保養、客製造型設計</p>
-      <p class="desc" data-lang="en">Yizhong’s top nail art — gel, design & care</p>
-      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank" rel="noopener" class="button">前往網站</a>
-      <nav class="social" aria-label="詠稘麗社群連結">
-        <a href="https://www.instagram.com/ycl_nail.studio/" target="_blank" rel="noopener">Instagram</a>
-      </nav>
-      <p class="map-link">
-        <a href="https://maps.app.goo.gl/UCRRuwMkA1Q95ePV6" target="_blank" rel="noopener">📍 查看地圖</a>
-      </p>
-      <div class="carousel" aria-live="polite" aria-atomic="true">
-        <p class="carousel-item">「每一筆彩繪，都是妳的風格延伸」</p>
-        <p class="carousel-item" style="display:none">「美，是從手開始的自信」</p>
-        <p class="carousel-item" style="display:none">「你的指尖，是我筆下的畫布」</p>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+    alert(`感謝訂閱！我們會寄最新優惠到 ${email}`);
+    closePopup();
+    document.getElementById('emailInput').value = '';
+  }
+  window.onload = () => {
+    switchLang('zh');
+    rotateCarousel();
+    document.getElementById('lang-select').addEventListener('change', e => {
+      switchLang(e.target.value);
+    });
+    // 3秒後顯示訂閱彈窗 (可依需求調整或移除)
+    setTimeout(showPopup, 3000);
+  };
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "手機工坊·科科佩利",
+      "image": "https://una1103.github.io/assets/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "宜佳街43號",
+        "addressLocality": "太平區",
+        "addressRegion": "台中市",
+        "postalCode": "411",
+        "addressCountry": "TW"
+      },
+      "telephone": "0919663087",
+      "url": "https://una1103.github.io/kokopelli_phone_lab/",
+      "sameAs": [
+        "https://www.instagram.com/kokopelli_phone_lab",
+        "https://line.me/R/ti/p/@122pntjd",
+        "https://www.tiktok.com/@user82462262831516"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "詠稘麗美甲工作室",
+      "image": "https://una1103.github.io/assets/ycl_logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "精武路266-7號",
+        "addressLocality": "北區",
+        "addressRegion": "台中市",
+        "postalCode": "404",
+        "addressCountry": "TW"
+      },
