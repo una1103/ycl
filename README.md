@@ -22,7 +22,7 @@
 - 服務內容：美甲設計｜手足保養｜凝膠彩繪｜風格造型
 - 地點：台中市北區一中街商圈
 - 官方網站：[https://una1103.github.io/ycl_nail_studio/](https://una1103.github.io/ycl_nail_studio/)
-- IG：`@ycl_nail_studio`（＊請補上正確帳號）
+- IG：`@ycl_nail.studio`
 
 ---
 
