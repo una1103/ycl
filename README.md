@@ -1,49 +1,56 @@
-# Kokopelli Phone Lab × 詠稘麗美甲工作室 | 聯合首頁說明
+# Kokopelli Phone Lab × 詠稘麗美甲工作室 | 聯合品牌首頁
 
-這是一個整合兩個品牌的聯合首頁專案，由一對夫妻各自經營的獨立事業共同協作：
+## 🧩 關於我們
 
----
+這是一個由夫妻共同創立、但獨立營運的雙品牌形象網站入口。我們在不同領域中，各自專精、共同成長：
 
-## 📱 手機工坊·科科佩利 Kokopelli Phone Lab
+- 📱 **手機工坊·科科佩利（Kokopelli Phone Lab）**｜專注於快速、專業的手機維修服務。
+- 💅 **詠稘麗美甲工作室（YCL Nail Studio）**｜提供時尚、個性化的美甲設計與手足保養。
 
-- 經營者：科科（張世成）
-- 服務內容：手機維修｜螢幕更換｜電池更換｜系統優化｜資料轉移
-- 地點：台中市太平區宜佳街 43 號
-- 官方網站：[https://una1103.github.io/kokopelli_phone_lab/](https://una1103.github.io/kokopelli_phone_lab/)
-- IG：[kokopelli_phone_lab](https://www.instagram.com/kokopelli_phone_lab)
-- LINE：[@122pntjd](https://line.me/R/ti/p/@122pntjd)
+雖然我們服務不同類型的客群，但有相同的品牌核心理念：
+> **「用專業打造信任，用溫度經營長久」**
 
 ---
 
-## 💅 詠稘麗美甲工作室 YCL Nail Studio
+## 📱 Kokopelli Phone Lab（手機工坊·科科佩利）
 
-- 公司行號：詠稘麗有限公司（合法立案）
-- 負責人：YCL 老闆娘
-- 服務內容：美甲設計｜手足保養｜凝膠彩繪｜風格造型
-- 地點：台中市北區一中街商圈
-- 官方網站：[https://una1103.github.io/ycl_nail_studio/](https://una1103.github.io/ycl_nail_studio/)
-- IG：`@ycl_nail.studio`
+- 經營者：張世成  
+- 地點：台中市太平區宜佳街43號  
+- 官網：[https://una1103.github.io/kokopelli_phone_lab/](https://una1103.github.io/kokopelli_phone_lab/)  
+- IG：[kokopelli_phone_lab](https://www.instagram.com/kokopelli_phone_lab)  
+- LINE：[@122pntjd](https://line.me/R/ti/p/@122pntjd)  
+- 電話：0919663087
 
----
-
-## 🧠 品牌理念（共同核心）
-
-我們相信每一位顧客不只需要「專業的服務」，更值得感受到「人與人之間的用心」。
-
-> 「用專業打造信任，用溫度經營長久。」
-
-不論你是來修手機，還是做美甲，我們都希望讓你感受到：**科技與美感，都可以兼容並蓄。**
+### 主打服務：
+- 手機螢幕維修
+- 電池更換
+- 系統診斷／資料轉移
+- 專業保貼清潔升級方案
 
 ---
 
-## 🌐 聯合首頁功能設計
+## 💅 詠稘麗美甲工作室（YCL Nail Studio）
 
-本專案首頁（`index.html`）提供以下功能：
+- 公司行號名稱：**詠稘麗有限公司**
+- 經營者：YCL 老闆娘  
+- 地點：台中市北區一中街商圈  
+- 官網：[https://una1103.github.io/ycl_nail_studio/](https://una1103.github.io/ycl_nail_studio/)  
+- IG：[@ycl_nail.studio](https://www.instagram.com/ycl_nail.studio/)
 
-- 雙品牌視覺呈現（左手機、右美甲）
-- 中英語系切換
-- 各自連結導入各自官方網站
-- 品牌理念區塊
-- 社群與聯絡方式整合
+### 主打服務：
+- 凝膠美甲設計
+- 手足保養
+- 客製風格彩繪
+- 情侶、學生方案優惠
 
 ---
+
+## 💡 聯合品牌願景
+
+- 強化在地品牌影響力，提供高品質、信任感十足的服務體驗
+- 成為生活圈中「手機維修 x 美感保養」的兩大代表品牌
+- 擴展區域內的話題性與合作機會，迎接更多異業合作與聯名提案
+
+---
+
+## 📁 建議結構架構
