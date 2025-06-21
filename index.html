@@ -5,116 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>科科佩利 × 詠稘麗 | 聯合首頁</title>
   <meta name="description" content="手機工坊 × 美甲工作室｜專業手機維修與時尚美甲的品牌整合首頁" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-      background: #111;
-      color: #eee;
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f9f9f9;
+      color: #222;
     }
-    .topbar {
-      background: #000;
-      padding: 10px 20px;
-      text-align: right;
-    }
-    .topbar select {
-      padding: 5px;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
+    header {
       background: linear-gradient(135deg, #3b7aff, #f26f8c);
-      color: #fff;
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
     }
-    .hero h1 {
-      font-size: 2.5rem;
+    header h1 {
+      font-size: 2.8rem;
       margin-bottom: 10px;
     }
-    .hero p {
+    header p {
       font-size: 1.2rem;
       margin-bottom: 30px;
     }
-    .btn-group a {
+    .cta-buttons a {
       display: inline-block;
       margin: 0 10px;
       padding: 12px 24px;
       border-radius: 30px;
-      background: #fff;
-      color: #111;
+      background: white;
+      color: #3b7aff;
       font-weight: bold;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
     }
-    .btn-group a:hover {
-      background: #ddd;
+    .cta-buttons a:hover {
+      background: #f0f0f0;
+      color: #f26f8c;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switch select {
+      padding: 6px;
+      border-radius: 5px;
+      font-size: 0.9rem;
     }
     .section {
-      padding: 40px 20px;
-      max-width: 960px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
-    .card {
-      background: #222;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-    }
-    .card h2 {
+    h2 {
+      font-size: 2rem;
       color: #3b7aff;
+      margin-bottom: 20px;
+      border-left: 5px solid #f26f8c;
+      padding-left: 10px;
     }
-    .card p {
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .column {
+      flex: 1 1 45%;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .column h3 {
+      color: #f26f8c;
+      margin-top: 0;
+    }
+    .column p {
+      line-height: 1.6;
+    }
+    footer {
+      background: #333;
       color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
     [data-lang][hidden] {
       display: none;
     }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .two-columns {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    語言 Language：
+  <div class="lang-switch">
+    <label for="lang-select">語言：</label>
     <select id="lang-select">
       <option value="zh" selected>中文</option>
       <option value="en">English</option>
     </select>
   </div>
 
-  <div class="hero">
+  <header>
     <h1>📱 科科佩利 × 💅 詠稘麗</h1>
-    <p data-lang="zh">手機維修與美甲設計的雙品牌首頁</p>
-    <p data-lang="en" hidden>The dual-brand homepage for phone repair and nail design</p>
-    <div class="btn-group">
+    <p data-lang="zh">手機維修與時尚美甲的雙品牌整合首頁</p>
+    <p data-lang="en" hidden>The dual-brand homepage for phone repair and nail art</p>
+    <div class="cta-buttons">
       <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank">手機工坊</a>
       <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank">詠稘麗美甲</a>
     </div>
-  </div>
+  </header>
 
   <div class="section">
-    <div class="card">
-      <h2>📍 門市資訊</h2>
-      <p data-lang="zh">
-        手機工坊地址：411 台中市太平區宜佳街43號<br />
-        詠稘麗地址：404 台中市北區精武路266-7號
-      </p>
-      <p data-lang="en" hidden>
-        Kokopelli Address: No.43, Yijia St., Taiping Dist., Taichung<br />
-        YCL Nail Studio: No.266-7, Jingwu Rd., North Dist., Taichung
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>🌟 品牌理念</h2>
-      <p data-lang="zh">我們堅持專業與美感並重，打造值得信賴的服務體驗。</p>
-      <p data-lang="en" hidden>We combine professionalism with aesthetics to create trustworthy services.</p>
+    <h2 data-lang="zh">品牌介紹</h2>
+    <h2 data-lang="en" hidden>Our Brands</h2>
+    <div class="two-columns">
+      <div class="column">
+        <h3>📱 手機工坊 · 科科佩利</h3>
+        <p data-lang="zh">
+          提供快速、專業、透明的手機維修服務，服務台中太平區多年，深受顧客信賴。從螢幕更換、電池汰換到水損維修，我們堅持品質第一。
+        </p>
+        <p data-lang="en" hidden>
+          Kokopelli Phone Lab offers fast, professional, and transparent mobile repair services in Taiping District, Taichung.
+        </p>
+        <p><strong>地址：</strong><br>411 台中市太平區宜佳街43號</p>
+      </div>
+      <div class="column">
+        <h3>💅 詠稘麗美甲工作室</h3>
+        <p data-lang="zh">
+          位於台中一中商圈，提供高質感手足保養與凝膠美甲服務，致力於讓每位顧客展現獨特風格與自信。
+        </p>
+        <p data-lang="en" hidden>
+          YCL Nail Studio is based in Taichung’s popular Yizhong area, offering professional gel nail art and manicure care services with a touch of individuality.
+        </p>
+        <p><strong>地址：</strong><br>404 台中市北區精武路266-7號</p>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 手機工坊 · 科科佩利 ＆ 詠稘麗美甲工作室. All rights reserved.</p>
+  </footer>
 
   <script>
     const langSelect = document.getElementById('lang-select');
-    langSelect.addEventListener('change', function() {
+    langSelect.addEventListener('change', function () {
       const selected = this.value;
       document.querySelectorAll('[data-lang]').forEach(el => {
         el.hidden = el.dataset.lang !== selected;
