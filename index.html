@@ -3,113 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>科科佩利 × 詠稘麗 | 聯合首頁</title>
-  <meta name="description" content="手機工坊 × 美甲工作室｜專業手機維修與時尚美甲的品牌整合首頁" />
+  <title>科科佩利 × 詠稘麗｜聯合品牌首頁</title>
+  <meta name="description" content="自 2025年1月8日開幕！科科佩利手機工坊與詠稘麗美甲工作室｜專業手機維修 × 時尚美甲× 信賴與美感並重" />
+  <meta property="og:title" content="科科佩利 × 詠稘麗｜聯合品牌首頁" />
+  <meta property="og:description" content="台中在地 2025年1月8日 正式開幕｜手機維修 × 美甲設計 一站整合" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "科科佩利 × 詠稘麗 聯合首頁",
+    "url": "https://una1103.github.io/"
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #f9f9f9;
-      color: #222;
-    }
-    header {
-      background: linear-gradient(135deg, #3b7aff, #f26f8c);
-      color: white;
-      text-align: center;
-      padding: 80px 20px 60px;
-      position: relative;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 12px 24px;
-      border-radius: 30px;
-      background: white;
-      color: #3b7aff;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .cta-buttons a:hover {
-      background: #f0f0f0;
-      color: #f26f8c;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch select {
-      padding: 6px;
-      border-radius: 5px;
-      font-size: 0.9rem;
-    }
-    .section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      font-size: 2rem;
-      color: #3b7aff;
-      margin-bottom: 20px;
-      border-left: 5px solid #f26f8c;
-      padding-left: 10px;
-    }
-    .two-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .column {
-      flex: 1 1 45%;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .column h3 {
-      color: #f26f8c;
-      margin-top: 0;
-    }
-    .column p {
-      line-height: 1.6;
-    }
-    footer {
-      background: #333;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    [data-lang][hidden] {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .two-columns {
-        flex-direction: column;
-      }
-    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Noto Sans TC',sans-serif;background:#f1f1f1;color:#333;}
+    .lang-switch{position:absolute;top:16px;right:16px;}
+    .lang-switch select{padding:6px;border-radius:4px;}
+    header{position:relative;text-align:center;color:#fff;padding:100px 20px 80px;
+      background:linear-gradient(135deg,#3b7aff,#f26f8c);background-size:200% 200%;
+      animation:gradBG 10s ease infinite;}
+    @keyframes gradBG{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+    header h1{font-size:2.8rem;margin:0 0 10px;}
+    header p{font-size:1.2rem;margin:0 0 30px;}
+    .cta-buttons a{display:inline-block;margin:0 10px;padding:12px 24px;border-radius:30px;
+      background:#fff;color:#3b7aff;font-weight:700;text-decoration:none;transition:.3s;}
+    .cta-buttons a:hover{background:#f0f0f0;color:#f26f8c;}
+    .section{max-width:1000px;margin:60px auto;padding:0 20px;}
+    h2{font-size:1.8rem;color:#3b7aff;border-left:6px solid #f26f8c;padding-left:12px;margin-bottom:20px;}
+    .two-columns{display:flex;flex-wrap:wrap;gap:20px;}
+    .column{flex:1 1 45%;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);opacity:0;transform:translateY(20px);transition:all .6s;}
+    .column.visible{opacity:1;transform:translateY(0);}
+    .column h3{color:#f26f8c;}
+    .column p{line-height:1.6;}
+    .carousel{position:relative;overflow:hidden;background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);margin:40px 0;padding:20px;}
+    .carousel-inner{display:flex;transition:transform .5s ease;}
+    .testimonial{min-width:100%;padding:0 20px;box-sizing:border-box;}
+    .testimonial p{font-style:italic;}
+    .testimonial .author{margin-top:10px;text-align:right;font-weight:700;color:#3b7aff;}
+    .carousel-nav{text-align:center;margin-top:12px;}
+    .carousel-nav button{border:none;background:#ddd;width:12px;height:12px;border-radius:50%;margin:0 4px;cursor:pointer;transition:.3s;}
+    .carousel-nav button.active{background:#3b7aff;}
+    .grid{display:flex;flex-wrap:wrap;gap:10px;}
+    .grid img{width:calc(33.333%-10px);border-radius:8px;cursor:pointer;transition:.3s;}
+    .grid img:hover{transform:scale(1.05);}
+    .tiktok{background:#fff;padding:20px;border-radius:12px;text-align:center;margin:40px 0;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+    .tiktok a{display:inline-block;padding:12px 20px;background:#3b7aff;color:#fff;border-radius:8px;text-decoration:none;}
+    .form-section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);margin:40px 0;}
+    .form-section input, .form-section textarea {width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:4px;}
+    .form-section button{padding:12px 20px;background:#3b7aff;color:#fff;border:none;border-radius:4px;cursor:pointer;}
+    footer{background:#333;color:#ccc;text-align:center;padding:20px;margin-top:60px;}
+    [data-lang][hidden]{display:none;}
+    @media(max-width:768px){.two-columns{flex-direction:column;} .grid img{width:calc(50%-10px);} }
   </style>
 </head>
 <body>
   <div class="lang-switch">
-    <label for="lang-select">語言：</label>
     <select id="lang-select">
       <option value="zh" selected>中文</option>
       <option value="en">English</option>
@@ -117,54 +67,81 @@
   </div>
 
   <header>
-    <h1>📱 科科佩利 × 💅 詠稘麗</h1>
-    <p data-lang="zh">手機維修與時尚美甲的雙品牌整合首頁</p>
-    <p data-lang="en" hidden>The dual-brand homepage for phone repair and nail art</p>
+    <h1 data-lang="zh">手機工坊·科科佩利 × 詠稘麗美甲工作室</h1>
+    <h1 data-lang="en" hidden>Phone Lab Kokopelli × YCL Nail Studio</h1>
+    <p data-lang="zh">我們於2025年1月8日正式開幕，專業手機維修與時尚美甲一站式享受</p>
+    <p data-lang="en" hidden>Opened on 8 Jan 2025—your one-stop for phone repair & stylish nail care</p>
     <div class="cta-buttons">
-      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank">手機工坊</a>
-      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank">詠稘麗美甲</a>
+      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank" data-lang="zh">立即前往手機工坊</a>
+      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank" data-lang="zh">立即前往美甲工作室</a>
+      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank" data-lang="en" hidden>Visit Phone Lab</a>
+      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank" data-lang="en" hidden>Visit Nail Studio</a>
     </div>
   </header>
 
   <div class="section">
-    <h2 data-lang="zh">品牌介紹</h2>
-    <h2 data-lang="en" hidden>Our Brands</h2>
-    <div class="two-columns">
+    <h2 data-lang="zh">品牌 & 門市介紹</h2>
+    <h2 data-lang="en" hidden>About Us</h2>
+    <div class="two-columns" id="intro-section">
       <div class="column">
-        <h3>📱 手機工坊 · 科科佩利</h3>
-        <p data-lang="zh">
-          提供快速、專業、透明的手機維修服務，服務台中太平區多年，深受顧客信賴。從螢幕更換、電池汰換到水損維修，我們堅持品質第一。
-        </p>
-        <p data-lang="en" hidden>
-          Kokopelli Phone Lab offers fast, professional, and transparent mobile repair services in Taiping District, Taichung.
-        </p>
-        <p><strong>地址：</strong><br>411 台中市太平區宜佳街43號</p>
+        <h3 data-lang="zh">📱 手機工坊·科科佩利</h3>
+        <h3 data-lang="en" hidden>Kokopelli Phone Lab</h3>
+        <p data-lang="zh">專業手機維修，自開幕以來迅速成為太平區信賴品牌，服務範圍包含螢幕、電池、水損等。</p>
+        <p data-lang="en" hidden>Expert phone repair in Taiping since opening. We fix screens, batteries, water damage and more.</p>
+        <p><strong data-lang="zh">地址：</strong>411 台中市太平區宜佳街43號</p>
+        <p><strong data-lang="en">Address:</strong> No.43 Yijia St, Taiping, Taichung 411</p>
       </div>
       <div class="column">
-        <h3>💅 詠稘麗美甲工作室</h3>
-        <p data-lang="zh">
-          位於台中一中商圈，提供高質感手足保養與凝膠美甲服務，致力於讓每位顧客展現獨特風格與自信。
-        </p>
-        <p data-lang="en" hidden>
-          YCL Nail Studio is based in Taichung’s popular Yizhong area, offering professional gel nail art and manicure care services with a touch of individuality.
-        </p>
-        <p><strong>地址：</strong><br>404 台中市北區精武路266-7號</p>
+        <h3 data-lang="zh">💅 詠稘麗美甲工作室</h3>
+        <h3 data-lang="en" hidden>YCL Nail Studio</h3>
+        <p data-lang="zh">精緻手足保養與凝膠彩繪，位於人氣一中街，打造時尚風格與自信魅力。</p>
+        <p data-lang="en" hidden>Gel nails & manicure art in Yizhong area—bringing style and confidence.</p>
+        <p><strong data-lang="zh">地址：</strong>404 台中市北區精武路266-7號</p>
+        <p><strong data-lang="en">Address:</strong> No.266-7 Jingwu Rd, North, Taichung 404</p>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 手機工坊 · 科科佩利 ＆ 詠稘麗美甲工作室. All rights reserved.</p>
-  </footer>
+  <div class="section">
+    <h2 data-lang="zh">顧客見證</h2>
+    <h2 data-lang="en" hidden>Testimonials</h2>
+    <div class="carousel" id="testimonial-carousel">
+      <div class="carousel-inner">
+        <div class="testimonial">
+          <p>「換電池速度超快，螢幕也修得像新的一樣！」</p>
+          <div class="author">— 王先生</div>
+        </div>
+        <div class="testimonial">
+          <p>「手機修好後，下次還會來找你們！」</p>
+          <div class="author">— 李小姐</div>
+        </div>
+        <div class="testimonial">
+          <p>「指甲設計太喜歡，朋友一直稱讚！」</p>
+          <div class="author">— 小芳</div>
+        </div>
+      </div>
+      <div class="carousel-nav" id="testimonial-nav"></div>
+    </div>
+  </div>
 
-  <script>
-    const langSelect = document.getElementById('lang-select');
-    langSelect.addEventListener('change', function () {
-      const selected = this.value;
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.hidden = el.dataset.lang !== selected;
-      });
-    });
-  </script>
-</body>
-</html>
+  <div class="section">
+    <h2 data-lang="zh">美甲作品集</h2>
+    <h2 data-lang="en" hidden>Nail Gallery</h2>
+    <div class="grid">
+      <img src="https://via.placeholder.com/300x300?text=美甲1" alt="Gallery" />
+      <img src="https://via.placeholder.com/300x300?text=美甲2" alt="Gallery" />
+      <img src="https://via.placeholder.com/300x300?text=美甲3" alt="Gallery" />
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="tiktok">
+      <h2 data-lang="zh">快來看我們的 TikTok</h2>
+      <h2 data-lang="en" hidden>Check our TikTok</h2>
+      <a href="#" target="_blank" id="tiktok-btn" data-lang="zh">觀看影片</a>
+      <a href="#" target="_blank" id="tiktok-btn-en" data-lang="en" hidden>Watch Videos</a>
+    </div>
+  </div>
+
+  <div class="section form-section">
+    <h2 data-lang="zh">預約／訂閱最
