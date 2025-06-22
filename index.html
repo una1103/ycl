@@ -1,205 +1,109 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>科科佩利 × 詠稘麗｜聯合品牌首頁</title>
-  <meta name="description" content="2025年1月8日開幕！手機工坊 × 美甲工作室，一站式專業服務。" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>科科佩利 × 詠稘麗｜品牌首頁</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unica+One&family=IBM+Plex+Sans+Condensed:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #f8f8f8;
-      color: #222;
+      background: #f9f5ef;
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      color: #2e2e2e;
     }
     header {
-      background: linear-gradient(135deg, #3b7aff, #f26f8c);
-      color: white;
+      background: #a63d40;
+      color: #fff;
+      padding: 60px 20px;
       text-align: center;
-      padding: 100px 20px 60px;
-      background-size: 200% 200%;
-      animation: gradient 8s ease infinite;
     }
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    header h1 {
+      font-family: 'Unica One', cursive;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
-    header h1 { font-size: 2.6rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; margin-bottom: 30px; }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 12px 24px;
-      background: white;
-      color: #3b7aff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
-    .cta-buttons a:hover {
-      background: #f0f0f0;
-      color: #f26f8c;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch select {
-      padding: 6px;
-      border-radius: 5px;
-      font-size: 0.9rem;
+    header p {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
     }
     .section {
       max-width: 1000px;
       margin: 60px auto;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
       padding: 0 20px;
     }
-    h2 {
-      font-size: 2rem;
-      color: #3b7aff;
-      margin-bottom: 20px;
-      border-left: 6px solid #f26f8c;
-      padding-left: 12px;
+    .brand-box {
+      flex: 1 1 45%;
+      background: #fff;
+      border: 3px solid #2e2e2e;
+      padding: 24px;
+      border-radius: 10px;
     }
-    [data-lang][hidden] {
-      display: none;
+    .brand-box h2 {
+      font-family: 'Unica One', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #a63d40;
+    }
+    .brand-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .brand-box .address {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .brand-box a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #2e6e5c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #2e2e2e;
+      color: #eee;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
-  <div class="lang-switch">
-    <select id="lang-select">
-      <option value="zh" selected>中文</option>
-      <option value="en">English</option>
-    </select>
-  </div>
 
   <header>
-    <h1 data-lang="zh">科科佩利手機工坊 × 詠稘麗美甲工作室</h1>
-    <h1 data-lang="en" hidden>Kokopelli Phone Lab × YCL Nail Studio</h1>
-    <p data-lang="zh">我們將於 2025 年 1 月 8 日盛大開幕，結合專業手機維修與時尚美甲的雙品牌體驗</p>
-    <p data-lang="en" hidden>We proudly open on Jan 8, 2025 — the dual-brand experience of expert phone repair and nail art</p>
-    <div class="cta-buttons">
-      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank" data-lang="zh">手機工坊</a>
-      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank" data-lang="zh">詠稘麗美甲</a>
-      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank" data-lang="en" hidden>Phone Lab</a>
-      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank" data-lang="en" hidden>Nail Studio</a>
-    </div>
+    <h1>2025 GRAND OPENING</h1>
+    <p>科科佩利手機工坊 × 詠稘麗美甲工作室</p>
   </header>
-    <div class="section">
-    <h2 data-lang="zh">品牌介紹</h2>
-    <h2 data-lang="en" hidden>Our Brands</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:20px;">
-      <div style="flex:1 1 45%;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-        <h3>📱 科科佩利手機工坊</h3>
-        <p data-lang="zh">快速透明的手機維修，專精於螢幕、電池、水損與資料救援，服務太平區深耕多年。</p>
-        <p data-lang="en" hidden>Reliable mobile repair in Taiping: screens, batteries, water damage & data rescue.</p>
-        <p><strong data-lang="zh">地址：</strong>411 台中市太平區宜佳街43號</p>
-        <p><strong data-lang="en" hidden>Address:</strong> No. 43, Yijia St, Taiping Dist., Taichung 411</p>
-      </div>
-      <div style="flex:1 1 45%;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-        <h3>💅 詠稘麗美甲工作室</h3>
-        <p data-lang="zh">手足保養與凝膠彩繪美甲，結合時尚與藝術，坐落於一中商圈。</p>
-        <p data-lang="en" hidden>Manicure & gel nail design with style and artistry in the Yizhong district.</p>
-        <p><strong data-lang="zh">地址：</strong>404 台中市北區精武路266-7號</p>
-        <p><strong data-lang="en" hidden>Address:</strong> No. 266-7, Jingwu Rd, North Dist., Taichung 404</p>
-      </div>
-    </div>
-  </div>
 
   <div class="section">
-    <h2 data-lang="zh">顧客見證</h2>
-    <h2 data-lang="en" hidden>Testimonials</h2>
-    <div id="testimonial-carousel" style="background:#fff;border-radius:12px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-      <div class="testimonial" data-index="0">
-        <p>「螢幕換完跟新的一樣，速度又快！」</p>
-        <div style="text-align:right;font-weight:bold;color:#3b7aff;">— 小陳</div>
-      </div>
-      <div class="testimonial" data-index="1" hidden>
-        <p>「設計超喜歡，手看起來變白了，讚！」</p>
-        <div style="text-align:right;font-weight:bold;color:#f26f8c;">— 小芳</div>
-      </div>
-      <div class="testimonial" data-index="2" hidden>
-        <p>「服務態度很好，價錢也合理！」</p>
-        <div style="text-align:right;font-weight:bold;color:#3b7aff;">— 王先生</div>
-      </div>
-      <div style="text-align:center;margin-top:15px;">
-        <button onclick="showTestimonial(0)">●</button>
-        <button onclick="showTestimonial(1)">●</button>
-        <button onclick="showTestimonial(2)">●</button>
-      </div>
+    <div class="brand-box">
+      <h2>📱 科科佩利手機工坊</h2>
+      <p>來自太平的專業手機維修服務，提供螢幕更換、電池汰換、水損維修、資料救援等快速且誠實的維修方案。</p>
+      <p class="address">📍 地址：411 台中市太平區宜佳街43號</p>
+      <a href="https://una1103.github.io/kokopelli_phone_lab/" target="_blank">前往手機工坊</a>
     </div>
-  </div>
 
-  <div class="section">
-    <h2 data-lang="zh">IG 美甲作品</h2>
-    <h2 data-lang="en" hidden>Instagram Nail Gallery</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <img src="https://via.placeholder.com/300x300?text=Design+1" style="width:32%;border-radius:8px;" />
-      <img src="https://via.placeholder.com/300x300?text=Design+2" style="width:32%;border-radius:8px;" />
-      <img src="https://via.placeholder.com/300x300?text=Design+3" style="width:32%;border-radius:8px;" />
+    <div class="brand-box">
+      <h2>💅 詠稘麗美甲工作室</h2>
+      <p>位於一中商圈，以凝膠彩繪與手足保養為主，打造專屬於妳的時尚風格與優雅魅力。</p>
+      <p class="address">📍 地址：404 台中市北區精武路266-7號</p>
+      <a href="https://una1103.github.io/ycl_nail_studio/" target="_blank">前往詠稘麗</a>
     </div>
-    <div style="text-align:center;margin-top:15px;">
-      <a href="https://www.instagram.com/ycl_nail.studio/" target="_blank"
-         style="display:inline-block;padding:10px 20px;background:#3b7aff;color:white;text-decoration:none;border-radius:6px;">
-         查看更多 IG 作品
-      </a>
-    </div>
-  </div>
-    <div class="section">
-    <h2 data-lang="zh">觀看我們的 TikTok</h2>
-    <h2 data-lang="en" hidden>Follow Us on TikTok</h2>
-    <div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:center;">
-      <img src="https://via.placeholder.com/320x180?text=TikTok+Preview" style="max-width:100%;border-radius:8px;margin-bottom:15px;" alt="TikTok video preview" />
-      <a href="https://www.tiktok.com/@user82462262831516" target="_blank"
-         style="display:inline-block;padding:10px 20px;background:#f26f8c;color:white;text-decoration:none;border-radius:6px;">
-         前往 TikTok 頻道
-      </a>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 data-lang="zh">預約 / 聯絡我們</h2>
-    <h2 data-lang="en" hidden>Book / Contact Us</h2>
-    <form style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05);" onsubmit="alert('感謝您的預約，我們將盡快與您聯繫'); return false;">
-      <label>姓名 / Name</label>
-      <input type="text" required />
-      <label>聯絡方式 / Contact Info</label>
-      <input type="text" required />
-      <label>留言 / Message</label>
-      <textarea rows="4"></textarea>
-      <button type="submit" style="margin-top:10px;">送出 Submit</button>
-    </form>
   </div>
 
   <footer>
-    <p>&copy; 2025 手機工坊 · 科科佩利 & 詠稘麗美甲工作室 All rights reserved.</p>
-    <p style="font-size:0.9rem;">地址：411 台中市太平區宜佳街43號 & 404 台中市北區精武路266-7號</p>
-    <p>電話：0919-663-087 ｜ Email：a0919663126@gmail.com</p>
+    © 2025 Kokopelli Phone Lab & YCL Nail Studio. All Rights Reserved.
   </footer>
 
-  <script>
-    // 語言切換
-    const langSelect = document.getElementById('lang-select');
-    langSelect.addEventListener('change', () => {
-      const selected = langSelect.value;
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.hidden = el.dataset.lang !== selected;
-      });
-    });
-
-    // 評價輪播功能
-    const testimonials = document.querySelectorAll('.testimonial');
-    function showTestimonial(index) {
-      testimonials.forEach((el, i) => {
-        el.hidden = i !== index;
-      });
-    }
-  </script>
 </body>
 </html>
